@@ -1,0 +1,32 @@
+1. On Pivotal Tracker, create user stories to set up the User Interface elements:
+a. User sign-up page.
+b. User sign-in page.
+c. A page/pages where a user can do the following:
+i. Create a red-flag record.
+ii. Create an intervention record.
+iii. Delete a red-flag or intervention record.
+iv. Add images to either red-flag or intervention record.
+v. Add videos to either red-flag or intervention record.
+vi. Add geolocation (Lat Long Coordinates) to either a red-flag or intervention
+record.
+vii. View all red-flag or intervention records an individual user has created.
+d. A page/pages for a user�s profile which, at minimum displays:
+i. The number of red-flag/intervention records that has been resolved.
+ii. The number of red-flag/intervention records that are yet to be resolved (in
+draft or under investigation states).
+iii. The number of red-flag/intervention records that has been rejected.
+iv. List of all red-flag/intervention records.
+e. A page/pages where an Admin can do the following:
+i. Change the status of a red-flag/intervention records.
+ii. List of all red-flag/intervention records created by all users.
+//for debugging on console.log
+console.log('iiiiiiii', i, index)
+//clhome.addEventListener.click 
+
+console.log("wle", interva);
+
+console.log("wle", interva);
+
+custom 
+
+edit view should show different buttons for user and admin

@@ -1,0 +1,581 @@
+body{ 
+    font-family: Cambria, Cochin, Georgia, serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: auto;
+    background: #f2f2f2;   
+}
+
+/* Global */
+.container{
+    width: 100%;
+    margin: auto;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+.home{
+    background-image: linear-gradient(rgba(235, 204, 33, 0.63), rgba(235, 204, 33, 0.63)), url("../img/ibackground.jpg");
+    height: 600px;
+    max-height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* Navbar styling */
+.navbar{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 100%;  
+}
+.navbar #ilogo{
+    float: left;
+    height: 85px;
+    margin-right: 10px;
+    max-width: 80px;
+    margin-bottom: -25px;
+}
+.navbar #ilogo h2{
+    color: #36360b;
+    margin: 0;
+    position: fixed;
+    font-weight: 600;
+}
+.navbar a {
+    color:#36360b;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    }
+
+ .inavbar li{
+    display: inline;
+    padding: 20px; 
+ }
+  
+
+.navbar .inavbar{
+    right: 0px;
+    width: 40%;
+    max-width: 100%;
+    position: fixed;
+    padding-top: 10px;
+}
+
+
+/* .icreate li{
+    position: inline;
+    width: 20%;
+    padding-top: 10px;
+    max-width: 100%;
+} */
+
+/* Brief Text on Home */
+
+.ibrief{
+    width: 45%;
+    padding: 10% 0 0;
+    margin-left: 25px;
+    min-height: 200px;
+    float: left;
+    font-family: Cambria, Cochin, Georgia, serif;
+    color: #36360b;
+    text-align: center;
+}
+
+.ibrief p{
+    font-size: 1.1em;
+}
+/* Display popular list on signUp */
+.iviews {
+    width: 45%;
+    padding: 5% 0 0;
+    margin-left: 25px;
+    height: 100%;
+    float: left;
+    font-family: Cambria, Cochin, Georgia, serif;
+    color: #36360b;
+    align-content: center;
+    position: static;
+}
+
+.ipopular {
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.623);
+    margin: 0 auto;
+}
+
+.ipopular img{
+    float: left;
+    /* position: relative; */
+    width: 40%;
+    height: 40%;
+    margin: 10px 3px;
+}
+.ipopular p{
+    /* position: relative; */
+    text-align: center;
+}
+.report-desc{
+    text-align: center;
+}
+
+.ipopular a{
+    text-decoration: none;
+    color: #36360b;
+}
+
+.ipopular a:hover{
+    color: #999018;
+}
+
+#nextprev a{
+    text-align: center;
+    text-decoration: none;
+    padding: 4px 8px;
+    color: #fff;
+    position: relative;
+}
+
+a:hover {
+    background-color: #c2c25ff1;
+    color: #999018;
+}
+
+.previous {
+    background-color: #36360bbe;
+    color: #a3a331f1;
+    margin-left: 25%;
+}
+
+.next {
+    background-color: #36360b;
+    color: #a3a331f1;
+    margin-right: 25%;
+}
+/*Form Styling*/
+
+#form-page{
+    background-image: linear-gradient(rgba(235, 204, 33, 0.63), rgba(235, 204, 33, 0.63)), url("../img/ibackground1.jpg");
+    height: 650px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.iform{
+    width: 30%;
+    padding: 10% 0 0;
+    margin-right: 100px;
+    min-height: 200px;
+    float: right;
+}
+
+.iform-1{
+   position: relative;
+   z-index: 1;
+   background-color: rgba(255, 255, 255, 0.623);
+   margin:  0 auto;
+   padding: 10px 45px;
+   text-align: center;
+}
+
+ .iform-1 input{
+    font-family: Cambria, Cochin, Georgia, serif;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.iform-1 button {
+    font-family: Cambria, Cochin, Georgia, serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #f5e505;
+    width: 100%;
+    border: 0;
+    padding:15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.iform-1 h2{
+    font-family: Cambria, Cochin, Georgia, serif;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.iform-1 p{
+    margin: 15px 0 0;
+    font-family: Cambria, Cochin, Georgia, serif;
+    font-size: 12px;
+}
+
+.iform-1 p a{
+    color: #999018;
+    text-decoration: none;
+}
+
+.iform-1 button:hover, .iform-1 button:active{
+    background: #f5e505b4
+}
+
+#sign-up{
+    display: none;
+}
+
+#change {
+    cursor: pointer;
+}
+
+/* Flag/Intervention Form */
+
+.icHolder {
+    font-family: Cambria, Cochin, Georgia, serif;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 0 0 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.icHolder a {
+    line-height: 35px;
+    background-position: 0 -113px;
+
+}
+
+.icSelector:link, .icSelector:visited, .icSelector:hover {
+    color: #999018;
+    outline: none;
+    text-decoration: none;
+}
+
+.icSelector {
+    font-family: Cambria, Cochin, Georgia, serif;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 0 015px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+ #icOptions {
+    display: none;
+    list-style: none;
+}
+
+#icOptions.active{
+    display: inline-block;
+}
+
+.icOptions > li {
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.icOptions li a{
+    color: #999018;
+    text-decoration: none;
+}
+
+a.sbFocus {
+    color: #f5e505;
+}
+/* ireport view page */
+.ireport-header{
+    background-image: linear-gradient(rgba(235, 204, 33, 0.63), rgba(235, 204, 33, 0.63)), url("../img/ibackground3.jpg");
+    height: 150px;
+    background-size: cover;
+    background-position: bottom -50%;
+    background-repeat: no-repeat;
+}
+
+.ireport-view{
+    width: 60%;
+    margin: 0 20%;
+    position: static;
+}
+
+.report-single{
+    background-color: #fff;
+   
+}
+
+figure img{
+    margin-left: 10%;
+    width: 80%;
+}
+
+.report-single h2{
+    text-align: center;
+    padding-top: 8px;
+    margin-bottom: -10px;
+    text-transform: capitalize;
+    line-height: 10px;
+    padding-bottom: 20px;
+} 
+.view-desc ul li{
+    padding: 0 50px;
+    color: #0a0a02;
+    background: url(img-li.png) no-repeat center left;
+    list-style: none;
+}
+
+.view-desc ul {
+    padding: 0 50px;
+    font-weight: 200px;
+    font-size: 15px;
+}
+
+.view-desc li{
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+
+.view-desc p {
+    padding: 0 50px;
+    color: #0a0a02;
+    font-family: Cambria, Cochin, Georgia, serif;
+
+}
+
+.report-single .report-date ul li{
+    border-bottom: solid 1px #efefef;
+}
+.report-single ul li:last-child {
+    border-right: none;
+}
+
+.report-date ul li {
+    padding: 10px 2px;
+    text-align: center;
+    width: 15%; 
+    border: solid 1px #efefef;
+    border-left: none;
+    border-bottom: none;
+    list-style: none;
+
+}
+
+.report-date li{
+    float: left;
+}
+
+.space{
+    float: none;
+    clear: both;
+}
+/* Admin Navigation */
+
+.acontainer{
+    width: 100%;
+    height: 600px;
+    margin: auto;
+    /* overflow: hidden; */
+}
+
+#anavbar{
+    background-color: #0c0c0a;
+    color: #fff !important;
+    height: 50px;
+    width: 100%;
+    display: block;  
+}
+
+.inavbar ul span{
+    font-size: 1.2em;
+    font-style: italic;
+    color: #999018;
+}
+
+#anavbar #ilogo{
+    float: left;
+    height: 85px;
+    max-width: 80px;
+    padding-top: 10px;
+    margin-bottom: -25px;
+}
+#anavbar #ilogo h2{
+    margin: 0;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+#ilogo h2::first-letter{
+    color:red;
+}
+
+#anavbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    }
+
+ #anavbar li{
+    display: inline;
+    padding: 20px; 
+ }
+  
+
+#anavbar .inavbar{
+   float:right;
+    /* width: 40%; */
+    max-width: 100%;
+    padding-top: 10px;
+}
+
+
+nav{
+    display: block;
+    position: absolute;
+    width: 200px;
+    margin-left: 0;
+    top:50px;   
+    height: calc(100% - 60px);
+    background-color: #0c0c0a;
+}
+
+#adminmenu{
+    background-color: #0c0c0a;
+    padding-top: 120px;
+    color: #fff;
+    text-align: left;
+    line-height: 50px;
+    font-size: 1.3em;
+    font-family: Cambria, Cochin, Georgia, serif; 
+}
+
+#adminmenu li{
+    width:100%;
+    height: 35px;
+    line-height: 20px;
+    background-color:#0c0c0aaf;
+
+}
+
+#adminmenu li>a{
+    font-size: 0.9em;
+    color:#fff;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Admin Activity */
+
+#iadmin{
+    position: absolute;
+    float: right;
+    top: 50;
+    right: 0;
+    height: calc(100% - 60px);
+    width: calc(100% - 200px);
+    background-color: #f5f5d0d0;
+}
+
+.title{
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    line-height: 20px;
+    margin-top: 1.5em;
+    font-size: 1.7em;
+    font-family: Cambria, Cochin, Georgia, serif; 
+}
+
+#display{
+    width: 90%;
+    margin-left: 100px;
+   
+}
+
+#homea table{
+  background: #ebdd63;
+  width: 30%;
+  height:200px;
+  margin-right: 10px;
+  float: left; 
+}
+
+#tsum th{
+    background-color: #ece280b4;
+    font-size: 50px;
+}
+
+#tflag{
+    background: #867f3c;
+    width: 100%;
+    height:auto;
+    margin-left: -35px;
+    color: #fff;
+    border: solid 1px;
+  }
+
+#tflag th{
+    background-color: #53531e81;
+    height:40px;
+    width: 50px;
+    border-bottom:solid 1px;
+}
+#tflag td{
+    border: solid 1px;
+    border-top:none;
+    text-align: center;
+    max-height:60px;
+    width: 50px;
+}
+
+#tflagi{
+    background: #867f3c;
+    width: 90%;
+    height:auto;
+    margin: 0 35px;
+    color: #fff;
+}
+
+#tflagi th{
+    background-color: #53531e81;
+    height:40px;
+    width: 50px;
+    border-bottom:solid 1px;
+}
+
+#tflagi td{
+    border: solid 1px;
+    border-top:none;
+    text-align: center;
+    max-height:60px;
+    width: 50px;
+}
+
+
+.aiform{
+    width: 30%;
+    margin: 0 35%;
+}
+
+
+
+
+
+footer{
+    background-color: #f5e505
+}
