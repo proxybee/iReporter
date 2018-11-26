@@ -20,7 +20,7 @@
                     <div class = "inavbar">
                         <ul>
                             <li><a href="index.html"></a></li>
-                            <li><a href="sign-up.html">Sign Up</a></li>
+                            <li><a href="sign-in.html">Sign Up</a></li>
                             <li><a href="sign-in.html">Sign In</a></li>
                             <li><a href="index.html">iReport</a></ul>
                             </li>
@@ -64,17 +64,51 @@
                     <p>Give brief description of the background of the community. Correct spelling, grammar and punctuation are 
                         critical. Never use text-style, abbreviations or rude or profane language that make your report difficult to understand or offensive to the reader.</p>
                     <p>After the report is submited check your email to make sure you see and respond promptly to messages from the moderators.</p>
-                    <p>&nbsp;</p>
-                    <div class="map-view">
-                    <div id=edit-button>
-                        <button>Save</button>
-                        <button>Delete</button>
-                    </div>          
+                    <div id="update">
+                        <button>Update</button> <button>Delete</button>
+                    </div> 
+                     <p>&nbsp;</p>
+                </div>
+                <div class="comments">
+                    <h3><i class="fa fa-comments"> comments</i></h3>       
+                    <div class="comhere">
+                      <ul class="commentList">
+                        <li>
+                          <h3 class="commenterName">name user</h3>
+                          <div class="commentText">
+                            <p class="">Hello, thank you.</p>
+                          </div>
+                          <span class="idate">on August 4th, 2018</span>
+                        </li>
+                        <li>
+                          <h3 class="commenterName">name user</h3>
+                          <div class="commentText">
+                            <p class="">Hi, very rich article, thank you.</p>
+                          </div>
+                          <span class="idate">on August 10th, 2018</span>
+                        </li>
+                      </ul>
+                      <form class="postcomments" action="">
+                        <h3>Leave A Reply</h3>
+                        <div class="comment">
+                          <input type="text" placeholder="Name">
+                        </div>
+                        <div class="comment">
+                          <input type="text" placeholder="Email">
+                        </div>
+                        <div class="comment">
+                          <textarea class="commentarea" placeholder="Your Comments"></textarea>
+                        </div>
+                        <div class="com-button">
+                          <button type="button" class="">Add Comment</button>
+                        </div>
+                      </form>
                     </div>
                 </div>
             </div>
         </section>
-        <footer>
+        <div class="space"></div>
+    <footer>
         <p>iReport Inc, Copyright &copy; 2018</p>
     </footer>
 <script type="text/javascript" src="js/change.js"></script>

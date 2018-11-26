@@ -18,4 +18,6 @@ let change = document.getElementById("change"),
             signIn.style.display = "block";
             signUp.style.display = "none"
         };
+
     });
+

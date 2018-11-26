@@ -71,6 +71,8 @@
                     <input type="text" placeholder="user name">
                     <input type="password" placeholder="password">
                     <input type="text" placeholder="email id">
+                    <input type="checkbox" id="admin" onclick="select(this.id)"> Admin
+                    <input type="checkbox" id="user" onclick="select(this.id)"> User
                     <button>Sign Up</button>
                     <p id = "change">Already an iReporter?<a>Sign In here</a></p>
                 </form>
@@ -78,6 +80,8 @@
                     <h3>Sign In</h3>
                     <input type="text" placeholder="user name">
                     <input type="text" placeholder="password">
+                    <input type="checkbox" id="admin" value=""> Admin
+                    <input type="checkbox" id="user" value="" checked> User
                     <button>Sign In</button>
                     <p id = "change1">Not an iReporter? <a>Sign Up here</a></p>
                 </form>
@@ -90,5 +94,7 @@
 </footer>
   <!--iReport Javascript-->
 <script type="text/javascript" src="js/change.js"></script>
+<script type="text/javascript" src="js/list.js"></script>
 </body>
 </html>
+

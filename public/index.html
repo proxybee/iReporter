@@ -42,27 +42,25 @@
                                     <h3><i></i>iReport</h3>
                                     <input type="text" placeholder="user name">
                                     <input type="textarea" placeholder="enter incident">
-                                    <input type="map" placeholder="Insert Geolocation">
+                                    <input type="map" placeholder="Insert Long, Lat">
                                     <button type ="button" id="flagButton">Report</button>
                                     <p id ="change"><a>iReport Intervene Here</a></p>
                                 </form>
                                 <form action="" method = "POST" id="sign-in">
                                     <h3><i></i>iReport</h3>
                                     <input type="text" placeholder="user name">
-                                    <div id="icHolder" class="icHolder">
-                                        <a href="#" class="icSelector" id="iclist">click to select intervention</a>
+                                    <div type="selection" id="icHolder" class="icHolder">
                                         <ul id="icOptions" class="icOptions">
                                             <li><a value="badRoad">Bad Road</a></li>
                                             <li><a value="CollapsedBrigdge">Collapsed Bridge</a></li>
-                                            <li><a value="poorEducation">Poor Education</a></li>
                                             <li><a value="Flooding">Flooded Area</a></li>
-                                            <li><a value="Malnutrition">Malnutrition</a></li>
                                             <li><a value="healthHazard">Health Hazard</a></li>
                                             <li><a value="input">Other</a><input type="text" placeholder="specify"></li>
                                         </ul>
+                                        <a href="#" class="icSelector" id="iclist">select intervention</a>
                                     </div>
                                     <input type="textarea" placeholder="enter incident">
-                                    <input type="map" placeholder="Insert Geolocation" id="locate">
+                                    <input type="map" placeholder="Insert Long, Lat" id="locate">
                                     <!-- enable to upload and post on submit -->
                                     <input type ="file" accept="video/*,image/*" placeholder="Click field to upload Video Or image" id ="vidim">
                                     <button type ="button" id="veneButton">Intervene</button>
@@ -81,3 +79,5 @@
 <script type="text/javascript" src="js/list.js"></script>
 </body>
 </html>
+
+
