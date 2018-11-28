@@ -15,3 +15,21 @@ export const getAllRedFlags = (req, res) => {
         });
     }
 }
+
+//set-up end point to get a specific red-flag
+export const getRedFlag = (req, res) => {
+    const redFlagId = req.params.redFlagId;
+    const redFlag = redFlags.find(flag => flag.id == redFlagId);
+
+    if (redFlag) {
+        res.send({
+            status: 200,
+            data: [redFlag]
+        });
+    } else {
+        res.send({
+            status: 400,
+            error: "the red-flag with the id:" + redFlagId + "does not exist"
+        });
+    }
+}

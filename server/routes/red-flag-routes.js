@@ -5,6 +5,6 @@ const app = express();
 app.use(express.json());
 
 app.get('/red-flags', getAllRedFlags);
-
+app.get('/red-flags/:redFlagId', getRedFlag);
 
 export default app;
