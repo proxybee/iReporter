@@ -6,5 +6,6 @@ app.use(express.json());
 
 app.get('/red-flags', getAllRedFlags);
 app.get('/red-flags/:redFlagId', getRedFlag);
+app.post('/red-flags', addRedFlag);
 
 export default app;
