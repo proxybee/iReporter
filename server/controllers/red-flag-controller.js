@@ -67,3 +67,52 @@ export const addRedFlag = (req, res) => {
         }
     });
 }
+
+//set-up end point to edit a red-flag location
+export const updateRedFlagLocation = (req, res) => {
+    const redFlagId = parseInt(req.params.redFlagId, 10);
+    const redFlag = redFlags.find(flag => flag.id === redFlagId);
+    if (redFlag) {
+        if (redFlag.status === "rejected") {
+            res.send({
+                status: 304,
+                error: "the red-flag with the id:" + redFlagId + "" + "does not adhere to iReports code of conduct hence has been rejected"
+            });
+        } else if (redFlag.status === "under investigation") {
+            res.send({
+                status: 304,
+                error: "the red-flag with the id:" + redFlagId + "" + "is under investigation"
+            });
+        } else if (redFlag.status === "resolved") {
+            res.send({
+                status: 304,
+                error: ("the red-flag with the id:" + redFlagId + "" + "has been resolved")
+            });
+        } else {
+            redFlag.location = req.body.location;
+
+            fs.writeFile('server/incidents.json', JSON.stringify(redFlags, null, 2), (err) => {
+                if (err) {
+                    res.send({
+                        status: 424,
+                        error: "redFlag update failed"
+                    });
+                } else {
+                    res.send({
+                        status: 205,
+                        data: [{
+                            id: redFlag.location,
+                            message: "red-flag location updated"
+                        }]
+                    });
+                }
+            });
+        }
+    } else {
+        res.send({
+            status: 400,
+            error: "the red-flag with the id:" + redFlagId + " does not exist"
+        });
+    }
+};
+
