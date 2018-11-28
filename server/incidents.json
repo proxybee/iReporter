@@ -1,0 +1,248 @@
+[
+  {
+    "id": 1,
+    "createdOn": "01/06/2018",
+    "createdBy": "Teema",
+    "type": "red-flag",
+    "location": "6.465422, 3.406448",
+    "status": "resolved",
+    "images": [
+      "image",
+      "image"
+    ],
+    "videos": [
+      "image",
+      "image"
+    ],
+    "comment": "the people of yaba local Governement have not been paid salary the whole of this year, this is unfair to those involved and I plead that questions should be asked and this workers be paid."
+  },
+  {
+    "id": 2,
+    "createdOn": "04/05/2018",
+    "createdBy": "Tami",
+    "type": "intervention",
+    "location": "6.465422, 3.406448",
+    "status": "under investigation",
+    "images": [
+      "image",
+      "image"
+    ],
+    "videos": [
+      "image",
+      "image"
+    ],
+    "comment": "prisoners in my state are left to rot and die with no hygiene, food or any form of care"
+  },
+  {
+    "id": 4,
+    "createdOn": "02/06/2018",
+    "createdBy": "swifty",
+    "type": "red-flag",
+    "location": "6.465422, 3.406448",
+    "status": "resolved",
+    "images": [
+      "image",
+      "image"
+    ],
+    "videos": [
+      "image",
+      "image"
+    ],
+    "comment": "This Governement is being unjust, for completely abandoning the spillage in my community, kindly investigate and resolve this please."
+  },
+  {
+    "id": 5,
+    "createdOn": "08/9/2018",
+    "createdBy": "Jami",
+    "type": "red-flag",
+    "location": "6.7890, 4.6789",
+    "status": "pending",
+    "images": [
+      "image",
+      "image"
+    ],
+    "videos": [
+      "image",
+      "image"
+    ],
+    "comment": "the peopel of yaba local Governement have not been paid salary the whole of this year, this is unfair to those involved and I plead that questions should be asked, so this workers can get paid."
+  },
+  {
+    "id": 6,
+    "createdOn": "02/09/2018",
+    "createdBy": "Toch",
+    "type": "red-flag",
+    "location": "6.465422, 3.406448",
+    "status": "rejected",
+    "images": [
+      "image",
+      "image"
+    ],
+    "videos": [
+      "image",
+      "image"
+    ],
+    "comment:": "just wanted to say hi, I am  new on this platform."
+  },
+  {
+    "id": 7,
+    "createdOn": "02/09/2018",
+    "createdBy": "Tolu",
+    "type": "red-flag",
+    "location": "8.5672, 3.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "videos": [
+      "image",
+      "image"
+    ],
+    "comment:": "People in my community are unjustly forced and bullied to pay alevy daily whether or not they can afford it."
+  },
+  {
+    "id": 8,
+    "createdOn": "11/28/2018",
+    "createdBy": "Tarim",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 9,
+    "createdOn": "11/28/2018"
+  },
+  {
+    "id": 9,
+    "createdOn": "11/28/2018",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 10,
+    "createdOn": "11/28/2018",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 11,
+    "createdOn": "11/28/2018",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 12,
+    "createdOn": "11/28/2018",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 13,
+    "createdOn": "11/28/2018",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 14,
+    "createdOn": "11/28/2018",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 15,
+    "createdOn": "11/28/2018",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  }
+]
