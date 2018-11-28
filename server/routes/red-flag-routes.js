@@ -8,5 +8,6 @@ app.get('/red-flags', getAllRedFlags);
 app.get('/red-flags/:redFlagId', getRedFlag);
 app.post('/red-flags', addRedFlag);
 app.patch('/red-flags/:redFlagId/location', updateRedFlagLocation);
+app.patch('/red-flags/:redFlagId/comment', updateRedFlagcomment);
 
 export default app;
