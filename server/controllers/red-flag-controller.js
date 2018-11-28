@@ -33,3 +33,37 @@ export const getRedFlag = (req, res) => {
         });
     }
 }
+
+//set-up end point to create a red-flag
+export const addRedFlag = (req, res) => {
+    const newRedFlag = {
+        id: redFlags.length + 1,
+        createdOn: new Date(Date.now()).toLocaleString().slice(0, 10),
+        createdBy: req.body.createdBy,
+        type: req.body.type,
+        location: req.body.location,
+        status: req.body.status,
+        image: req.body.image,
+        video: req.body.video,
+        comment: req.body.comment,
+    };
+
+    redFlags.push(newRedFlag);
+
+    fs.writeFile('server/incidents.json', JSON.stringify(redFlags, null, 2), (err) => {
+        if (err) {
+            res.send({
+                status: 424,
+                error: "redFlag post request failed"
+            });
+        } else {
+            res.send({
+                status: 200,
+                data: [{
+                    id: newRedFlag.id,
+                    message: "created red flag record"
+                }]
+            });
+        }
+    });
+}
