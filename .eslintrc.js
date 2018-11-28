@@ -1,12 +1,19 @@
-module.exports = { 
-    "extends": ["airbnb-base"],
+export default { 
+  "extends": "airbnb",
+  "parserOptions": {
+      "ecmaVersion": 6
+  },
     "env": {
-      "es6": true,
-      "node": true
+      "browser": true,
+        "node": true,
+        "es6": true,
+        "jasmine": true
     },
     "rules": {
       "semi": "error",
       "no-var": 2,
-      "prefer-arrow-callback": "error"
+      "linebreak-style": "off"
     } 
   };
+
+
