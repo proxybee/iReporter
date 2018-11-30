@@ -151,7 +151,7 @@ export const updateRedFlagcomment = (req, res) => {
                     res.send({
                         status: 205,
                         data: [{
-                            id: newRedFlag.id,
+                            id: redFlag.id,
                             message: "red flag comment updated"
                         }]
                     });

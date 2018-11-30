@@ -244,5 +244,22 @@
       "image"
     ],
     "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 16,
+    "createdOn": "11/30/2018",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
   }
 ]
