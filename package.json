@@ -4,7 +4,9 @@
   "description": "An eye witness app to fight corruption in Africa",
   "main": "index.js",
   "scripts": {
-    "test": "jasmin",
+    "build": "babel server -d babel15",
+    "babel": "@babel/preset-env server -d babel15",
+    "test": "jasmine",
     "start": "nodemon server.js --exec babel-node"
   },
   "repository": {
