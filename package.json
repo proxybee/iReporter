@@ -7,7 +7,7 @@
     "build": "babel server -d babel15",
     "babel": "@babel/preset-env server -d babel15",
     "test": "babel-node spec/run.js",
-    "start": "nodemon server.js --exec babel-node"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
