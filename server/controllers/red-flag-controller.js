@@ -24,11 +24,11 @@ export const getRedFlag = (req, res) => {
     if (redFlag) {
         res.send({
             status: 200,
-            data: [redFlag]
+            data: redFlag
         });
     } else {
         res.send({
-            status: 400,
+            status: 404,
             error: "the red-flag with the id:" + redFlagId + "does not exist"
         });
     }
