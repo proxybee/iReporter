@@ -34,6 +34,23 @@
     "comment": "prisoners in my state are left to rot and die with no hygiene, food or any form of care"
   },
   {
+    "id": 3,
+    "createdOn": "04/05/2018",
+    "createdBy": "Tami",
+    "type": "intervention",
+    "location": "6.465422, 3.406448",
+    "status": "pending",
+    "images": [
+      "image",
+      "image"
+    ],
+    "videos": [
+      "image",
+      "image"
+    ],
+    "comment": "prisoners in my state are left to rot and die with no hygiene, food or any form of care"
+  },
+  {
     "id": 4,
     "createdOn": "02/06/2018",
     "createdBy": "swifty",
@@ -248,6 +265,40 @@
   {
     "id": 16,
     "createdOn": "11/30/2018",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 17,
+    "createdOn": "11/30/2018",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 19,
+    "createdOn": "12/1/2018,",
     "createdBy": "Prince",
     "type": "intervention",
     "location": "17.5672, 4.84940",

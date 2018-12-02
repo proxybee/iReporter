@@ -10,8 +10,8 @@ export const getAllRedFlags = (req, res) => {
         });
     } else {
         res.send({
-            status: 500,
-            error: "ooops! we seem to have missed redFlags, we will fix this as soon as possible"
+            status: 204,
+            error: "Ooops! Currently no redflags"
         });
     }
 }
@@ -185,19 +185,20 @@ export const deleteRedFlag = (req, res) => {
         }
         const newRedFlags = redFlags.filter(flag => flag.id !== redFlagId);
         fs.writeFile('server/incidents.json', JSON.stringify(newRedFlags, null, 2), (err) => {
+            // check status code and message
             if (err) {
                 res.send({
-                    status: 205,
+                    status: 500,
                     data: [{
-                        id: newRedFlag.id,
-                        message: "red flag comment updated"
+                        id: redFlagId,
+                        message: "An error has occurred!"
                     }]
                 });
             } else {
                 res.send({
                     status: 200,
                     data: [{
-                        id: newRedFlag.id,
+                        id: redFlagId,
                         message: "red flag succesfully deleted"
                     }]
                 });
@@ -205,7 +206,7 @@ export const deleteRedFlag = (req, res) => {
         });
     } else {
         res.send({
-            status: 404,
+            status: 400,
             error: "the red-flag with the id:" + redFlagId + "does not exist"
         });
     }
