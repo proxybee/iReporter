@@ -17,6 +17,7 @@ app.get('/', (res, req) => {
 });
 
 app.use('/api/v1', routes);
+app.use(express.static(__dirname + "/public"));
 
 const port = process.env.PORT || 3020;
 app.listen(port, () => logger.info(`listening on port ${port}...`));
