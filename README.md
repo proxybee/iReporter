@@ -1,4 +1,4 @@
-{<img src="https://travis-ci.org/proxybee/iReporter.svg?branch=develop" alt="Build Status" />
+<img src="https://travis-ci.org/proxybee/iReporter.svg?branch=develop" alt="Build Status" />
 
 <img src="https://api.codeclimate.com/v1/badges/570dd2516dace3efb86d/test_coverage" />
 
