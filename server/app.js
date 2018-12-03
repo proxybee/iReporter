@@ -13,7 +13,9 @@ const app = express();
 
 // get homepage
 app.get('/', (res, req) => {
-  res.status(200).send('hi, server is running fine');
+  res.status(200).json({
+      message:'hi, server is running fine',
+    });
 });
 
 app.use('/api/v1', routes);
