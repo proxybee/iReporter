@@ -9,7 +9,7 @@
     "test": "babel-node spec/run.js",
     "start": "nodemon server/app.js --exec babel-node",
     "serve": "node dist/app.js",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build"
   },
   "repository": {
     "type": "git",
