@@ -7,8 +7,8 @@
     "build": "babel server -d dist",
     "babel": "@babel/preset-env server -d dist",
     "test": "babel-node spec/run.js",
-    "start": "nodemon server/app.js --exec babel-node",
-    "serve": "node dist/app.js",
+    "serve": "nodemon server/app.js --exec babel-node",
+    "start": "babel-node server/app.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build"
   },
   "repository": {

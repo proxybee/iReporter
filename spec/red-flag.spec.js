@@ -32,6 +32,7 @@ describe('Red flag REST API end points unit test', () => {
                 .get('/api/v1/red-flags')
                 .expect(200)
                 .then((res) => {
+                    console.log("nnnnn", res.body.data)
                     expect(res.status).toEqual(200);
                     expect(res.body.data).toEqual(redFlags);
                 })
