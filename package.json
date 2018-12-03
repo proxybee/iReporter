@@ -8,7 +8,7 @@
     "babel": "@babel/preset-env server -d dist",
     "test": "babel-node spec/run.js",
     "serve": "nodemon server/app.js --exec babel-node",
-    "start": "babel-node server/app.js",
+    "start": "babel-node server/app.js"
 
   },
   "repository": {
