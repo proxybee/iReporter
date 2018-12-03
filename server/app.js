@@ -1,7 +1,7 @@
 // call the packages the product needs
 import express from 'express';
 import winston from 'winston';
-import routes from './server/routes/red-flag-routes';
+import routes from './routes/red-flag-routes';
 
 const logger = winston.createLogger({
   transports: [

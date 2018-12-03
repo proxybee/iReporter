@@ -1,6 +1,6 @@
 import fs from 'fs';
 import request from 'supertest';
-import app from '../server';
+import app from '../server/app';
 import redFlags from '../server/incidents.json';
 
 const testIncidents = [
