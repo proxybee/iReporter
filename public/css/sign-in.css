@@ -1,0 +1,228 @@
+body{ 
+    font-family: oxygen, Georgia, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: auto;
+    background: #f2f2f2;   
+}
+.container{
+    width: 100%;
+    margin: auto;
+}
+
+/* Navbar styling */
+.navbar{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 100%;  
+}
+.navbar #ilogo{
+    float: left;
+    height: 85px;
+    margin-right: 10px;
+    max-width: 80px;
+    margin-bottom: -25px;
+}
+.navbar #ilogo h2{
+    color: #fdfdf4;
+    margin-top: 10px;
+    position: fixed;
+    font-size: 27px;
+    font-weight: 600;
+}
+.navbar #ilogo h2::first-letter{
+    color:red;
+}
+.navbar a {
+    color:#fdfdf4;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    font: oxygen, Georgia, sans-serif
+    }
+
+ .inavbar li{
+    display: inline;
+    padding: 20px; 
+ }
+
+ .inavbar li:hover {
+    text-decoration: underline;
+    color: #2522ce8a;
+    cursor: pointer;
+}
+  
+
+.navbar .inavbar{
+    right: 0px;
+    width: 40%;
+    max-width: 100%;
+    position: fixed;
+    padding-top: 10px;
+}
+
+    /* form */
+
+#form-page{
+    background-image: linear-gradient(rgba(33, 3, 235, 0.63), rgba(33, 46, 235, 0.63));
+    height: 650px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.siform{
+    width: 30%;
+    padding: 10% 0 0;
+    margin-right: 36%;
+    margin-top: 3%;
+    min-height: 200px;
+    float: right;
+    
+}
+
+.siform-1{
+   position: relative;
+   z-index: 1;
+   background-color: rgba(255, 255, 255, 0.623);
+   margin:  0 auto;
+   padding: 10px 45px;
+   text-align: center;
+   margin-bottom: 20px;
+
+}
+
+ .siform-1 input{
+    font-family: oxygen, Georgia, sans-serif;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    overflow: overlay;
+    cursor: pointer;
+}
+
+.siform-1 button {
+    font-family: oxygen, Georgia, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #0905f5;
+    color: #f8f7e9;
+    width: 80%;
+    border: 0;
+    padding:10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.siform-1 h2{
+    font-family: oxygen, Georgia, sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.siform-1 p{
+    margin: 15px 0 0;
+    font-family: oxygen, Georgia, sans-serif;
+    font-size: 12px;
+}
+
+.siform-1 h3{
+    margin: 15px 0 0;
+    font-family: oxygen, Georgia, sans-serif;
+    color: #f8f7e9;
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.siform-1 p a{
+    color: #f8f7e9;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.siform-1 button:hover, .iform-1 button:active{
+    background: #2905f58c;
+    color: #f8f7e9;
+}
+
+#sign-up{
+    display: none;
+}
+
+#change:hover {
+    text-decoration: underline;
+    color: #2522ce8a;
+    cursor: pointer;
+}
+
+#change1:hover {
+    text-decoration: underline ;
+    cursor: pointer;
+    color: #2522ce8a;
+}
+.footer {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    background: #c2c2b0;
+    position: fixed;
+
+}
+
+@media(max-width: 768px){
+    .inavbar li {
+     display: inline;
+     font-size: 12x;
+     float: none;
+     padding: 0;
+ }
+
+ .navbar #ilogo h2{
+     font-size: 20px;
+ }
+
+ .ibrief{
+     width: 100%;
+     margin-bottom: 0;
+     float: none;
+     text-align: center;
+     font-size:12px;
+     padding-top: 30px;
+     margin: 0;
+     min-height: 100px;
+ }
+
+ .siform{
+  width : 80%;
+  margin-right: 10%;
+  padding: 0;
+  padding-top: 70px;
+ }
+
+ .siform-1{
+     padding: 0;
+     margin-top:20px;
+     text-align: center;
+     float: none;
+ }
+ 
+ 
+ footer{
+     text-align: center;
+ }
+} 
