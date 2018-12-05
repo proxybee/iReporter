@@ -1,0 +1,324 @@
+body{ 
+    margin: 0;
+    padding: 0;
+}
+
+/* Global */
+.container{
+    width: 100%;
+    margin: auto;
+}
+
+.home{
+    background-image: linear-gradient(rgba(33, 3, 235, 0.63), rgba(33, 46, 235, 0.63)), url("../img/ibackground3.jpg");
+    height: 600px;
+    max-height: 100%;
+    padding-bottom: 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+    font: oxygen, Georgia, sans-serif
+}
+/* Navbar styling */
+.navbar{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 100%;  
+}
+.navbar #ilogo{
+    float: left;
+    height: 85px;
+    margin-right: 10px;
+    max-width: 80px;
+    margin-bottom: -25px;
+}
+.navbar #ilogo h2{
+    color: #fdfdf4;
+    margin-top: 10px;
+    position: fixed;
+    font-size: 28px;
+    font-weight: 600;
+    font: oxygen, Georgia, sans-serif
+}
+.navbar #ilogo h2::first-letter{
+    color:red;
+}
+.navbar a {
+    color:#fdfdf4;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    font: oxygen, Georgia, sans-serif;
+    }
+
+ .inavbar li{
+    display: inline;
+    padding: 20px;
+    font: oxygen, Georgia, sans-serif 
+ }
+
+ .inavbar li:hover {
+    text-decoration: underline;
+    color: #2522ce8a;
+    cursor: pointer;
+}
+  
+
+.navbar .inavbar{
+    right: 0px;
+    width: 40%;
+    max-width: 100%;
+    position: fixed;
+    padding-top: 10px;
+}
+
+
+ .icreate li{
+    position: inline;
+    width: 20%;
+    padding-top: 10px;
+    max-width: 100%;
+} 
+
+/* Brief Text on Home */
+
+.ibrief{
+    width: 45%;
+    padding: 10% 0 0;
+    margin-left: 25px;
+    min-height: 200px;
+    float: left;
+    font-family: oxygen, Georgia, sans-serif;
+    color:#fdfdf4;
+    text-align: center;
+    padding-top: 15%;
+}
+
+.iform{
+    width: 30%;
+    padding: 10% 0 0;
+    margin-right: 100px;
+    min-height: 200px;
+    float: right;
+    
+}
+
+.iform-1{
+   position: relative;
+   z-index: 1;
+   background-color: rgba(255, 255, 255, 0.623);
+   margin:  0 auto;
+   padding: 10px 45px;
+   text-align: center;
+   margin-bottom: 20px;
+
+}
+
+ .iform-1 input{
+    font-family: oxygen, Georgia, sans-serif;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    overflow: overlay;
+    cursor: pointer;
+}
+
+.iform-1 button {
+    font-family: oxygen, Georgia, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #0905f5;
+    color: #f8f7e9;
+    width: 80%;
+    border: 0;
+    padding:10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.iform-1 h2{
+    font-family: oxygen, Georgia, sans-serif;
+    /* text-transform: uppercase; */
+    font-size: 14px;
+}
+
+.iform-1 p{
+    margin: 15px 0 0;
+    font-family: oxygen, Georgia, sans-serif;
+    font-size: 12px;
+}
+
+.iform-1 h3{
+    margin: 15px 0 0;
+    font-family: oxygen, Georgia, sans-serif;
+    color: #f8f7e9;
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.iform-1 p a{
+    color: #f8f7e9;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.iform-1 button:hover, .iform-1 button:active{
+    background: #2905f58c;
+    color: #f8f7e9;
+}
+
+#sign-up{
+    display: none;
+}
+
+#change:hover {
+    text-decoration: underline;
+    color: #2522ce8a;
+    cursor: pointer;
+}
+
+#change1:hover {
+    text-decoration: underline ;
+    cursor: pointer;
+    color: #2522ce8a;
+}
+
+/* Flag/Intervention Form */
+
+.icHolder {
+    font-family: oxygen, Georgia, sans-serif;
+    background: #f2f2f2;
+    width: 100%;
+    height: 40px;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 0 0 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    z-index: 999;
+}
+
+.icHolder a {
+    line-height: 15px;
+    background-position: 0 -113px;
+    text-align: center;
+
+}
+
+.icHolder ul {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.icSelector:link, .icSelector:visited, .icSelector:hover {
+    color: #141313b2;
+    outline: none;
+    text-decoration: none;
+    
+}
+
+.icSelector:hover {
+    text-decoration: underline ;
+    cursor: pointer;
+    color: #2522ce8a;
+}
+
+.icSelector {
+    font-family: oxygen, Georgia, sans-serif;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 0 015px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+ #icOptions {
+    display: none;
+    list-style: none;
+}
+
+#icOptions.active{
+    display: inline-block;                                                                                                                                                                                                                                                                                 
+}
+
+.icOptions > li {
+    padding: 0 5px;
+    cursor: pointer;
+} 
+
+.icOptions li a{
+    color: #060886;
+    text-decoration: none;
+} 
+
+.footer {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    background: #c2c2b0;
+    position: fixed;
+
+}
+
+@media(max-width: 768px){
+       .inavbar li {
+        display: inline;
+        /* text-align: center; */
+        font-size: inherit;
+        float: none;
+        padding: 0;
+    }
+
+    .navbar #ilogo h2{
+        font-size: 20px;
+    }
+
+    .ibrief{
+        width: 100%;
+        margin-bottom: 0;
+        float: none;
+        text-align: center;
+        font-size:12px;
+        padding-top: 30px;
+        margin: 0;
+        min-height: 100px;
+    }
+
+    .iform{
+     width : 80%;
+     margin-right: 10%;
+     padding: 0;
+    }
+
+    .iform-1{
+        padding: 0;
+        margin:0;
+        text-align: center;
+        float: none;
+    }
+    
+    
+    footer{
+        text-align: center;
+    }
+} 
