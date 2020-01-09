@@ -10,7 +10,7 @@ if (!userToken) {
 
 function getIncidents() {
   // e.preventDefault()
-  fetch("http://localhost:3020/api/v1/admin/incidents", {
+  fetch("https://ireporterafrica.herokuapp.com/api/v1/admin/incidents", {
     method: "GET",
     mode: "cors",
     headers: {

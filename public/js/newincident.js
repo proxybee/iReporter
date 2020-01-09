@@ -26,7 +26,7 @@ const reportForm = document.getElementById('ireport-form')
     
   }
   
-    fetch('http://localhost:3020/api/v1/incidents', {
+    fetch('https://ireporterafrica.herokuapp.com/api/v1/incidents', {
     method: "POST",
     body: JSON.stringify(incidentData),
     mode: 'cors',
