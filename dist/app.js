@@ -34,7 +34,7 @@ app.use(_express["default"]["static"](_path["default"].resolve("".concat(__dirna
 
 app.use('/api/v1', _incidentRoutes["default"]);
 app.use('/api/v1/users', _userRoute["default"]);
-var port = process.env.PORT || 3020;
+var port = process.env.PORT || 4020;
 app.listen(port, function () {
   return logger.info("listening on port ".concat(port, "..."));
 });

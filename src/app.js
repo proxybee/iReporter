@@ -27,7 +27,7 @@ app.use('/api/v1', routes);
 app.use('/api/v1/users', userRoute);
 
 
-const port = process.env.PORT || 3020;
+const port = process.env.PORT || 4020;
 app.listen(port, () => logger.info(`listening on port ${port}...`));
 
 export default app;
