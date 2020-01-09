@@ -11,6 +11,8 @@ var _path = _interopRequireDefault(require("path"));
 
 var _winston = _interopRequireDefault(require("winston"));
 
+require("regenerator-runtime/runtime");
+
 var _incidentRoutes = _interopRequireDefault(require("./routes/incident-routes"));
 
 var _userRoute = _interopRequireDefault(require("./routes/user-route"));

@@ -3,8 +3,7 @@
 import express from 'express';
 import path from 'path';
 import winston from 'winston';
-import Auth from './middleware/auth';
-//import adminRoutes from './routes/incident-routes';
+import "regenerator-runtime/runtime";
 import routes from './routes/incident-routes';
 import userRoute from './routes/user-route';
 
