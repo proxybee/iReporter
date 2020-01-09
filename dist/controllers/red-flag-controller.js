@@ -5,247 +5,225 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteRedFlag = exports.updateRedFlagcomment = exports.updateRedFlagLocation = exports.addRedFlag = exports.getRedFlag = exports.getAllRedFlags = void 0;
 
-var _incidents = _interopRequireDefault(require("../incidents.json"));
-
 var _fs = _interopRequireDefault(require("fs"));
+
+var _db = _interopRequireDefault(require("../db/db"));
+
+var _users = _interopRequireDefault(require("../users.json"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-//set-up end point to get all red-flags
+// set-up end point to get all red-flags
 var getAllRedFlags = function getAllRedFlags(req, res) {
-  if (_incidents["default"].length) {
-    res.send({
-      status: 200,
-      data: _incidents["default"]
+  if (redFlags.length) {
+    res.status(200).send({
+      data: redFlags
     });
   } else {
-    res.send({
-      status: 204,
-      error: "Ooops! Currently no redflags"
+    res.status(204).send({
+      error: 'Ooops! Currently no redflags'
     });
   }
-}; //set-up end point to get a specific red-flag
+}; // set-up end point to get a specific red-flag
 
 
 exports.getAllRedFlags = getAllRedFlags;
 
 var getRedFlag = function getRedFlag(req, res) {
-  var redFlagId = req.params.redFlagId;
-
-  var redFlag = _incidents["default"].find(function (flag) {
-    return flag.id == redFlagId;
+  var redFlagId = parseInt(req.params.id, 10);
+  var redFlag = redFlags.find(function (flag) {
+    return flag.id === redFlagId;
   });
 
   if (redFlag) {
-    res.send({
-      status: 200,
+    res.status(200).send({
       data: redFlag
     });
   } else {
-    res.send({
-      status: 404,
-      error: "the red-flag with the id:" + redFlagId + "does not exist"
+    res.status(404).send({
+      error: "the red-flag with the id: ".concat(redFlagId, " does not exist")
     });
   }
-}; //set-up end point to create a red-flag
+}; // set-up end point to create a red-flag
 
 
 exports.getRedFlag = getRedFlag;
 
 var addRedFlag = function addRedFlag(req, res) {
-  var newRedFlag = {
-    id: _incidents["default"].length + 1,
-    createdOn: new Date(Date.now()).toLocaleString().slice(0, 10),
-    createdBy: req.body.createdBy,
-    type: req.body.type,
-    location: req.body.location,
-    status: req.body.status,
-    image: req.body.image,
-    video: req.body.video,
-    comment: req.body.comment
-  };
+  if (_users["default"].find(function (user) {
+    return user.id === parseInt(req.body.createdBy, 10);
+  })) {
+    var newRedFlag = {
+      id: redFlags.length + 1,
+      createdOn: new Date(Date.now()).toLocaleString().slice(0, 10),
+      createdBy: req.body.createdBy,
+      type: req.body.type,
+      location: req.body.location,
+      image: req.body.image,
+      status: 'pending',
+      video: req.body.video,
+      comment: req.body.comment
+    };
+    redFlags.push(newRedFlag);
 
-  _incidents["default"].push(newRedFlag);
-
-  _fs["default"].writeFile('server/incidents.json', JSON.stringify(_incidents["default"], null, 2), function (err) {
-    if (err) {
-      res.send({
-        status: 424,
-        error: "redFlag post request failed"
-      });
-    } else {
-      res.send({
-        status: 200,
-        data: [{
-          id: newRedFlag.id,
-          message: "created red flag record"
-        }]
-      });
-    }
-  });
-}; //set-up end point to edit a red-flag location
+    _fs["default"].writeFile('src/incidents.json', JSON.stringify(redFlags, null, 2), function (err) {
+      if (err) {
+        res.status(400).send({
+          error: 'redFlag post failed'
+        });
+      } else {
+        res.status(201).send({
+          data: newRedFlag,
+          message: 'created red flag record'
+        });
+      }
+    });
+  } else {
+    res.status(401).send({
+      error: 'User not authorized'
+    });
+  }
+}; // set-up end point to edit a red-flag location
 
 
 exports.addRedFlag = addRedFlag;
 
 var updateRedFlagLocation = function updateRedFlagLocation(req, res) {
-  var redFlagId = parseInt(req.params.redFlagId, 10);
-
-  var redFlag = _incidents["default"].find(function (flag) {
+  var redFlagId = parseInt(req.params.id, 10);
+  var redFlag = redFlags.find(function (flag) {
     return flag.id === redFlagId;
   });
 
   if (redFlag) {
-    if (redFlag.status === "rejected") {
-      res.send({
-        status: 304,
-        error: "the red-flag with the id:" + redFlagId + "" + "does not adhere to iReports code of conduct hence has been rejected"
+    if (redFlag.status === 'rejected') {
+      res.status(401).send({
+        error: "the red-flag with the id: ".concat(redFlagId, " does not adhere to iReports code of conduct hence has been rejected")
       });
-    } else if (redFlag.status === "under investigation") {
-      res.send({
-        status: 304,
-        error: "the red-flag with the id:" + redFlagId + "" + "is under investigation"
+    } else if (redFlag.status === 'under investigation') {
+      res.status(401).send({
+        error: "the red-flag with the id: ".concat(redFlagId, " is under investigation")
       });
-    } else if (redFlag.status === "resolved") {
-      res.send({
-        status: 304,
-        error: "the red-flag with the id:" + redFlagId + "" + "has been resolved"
+    } else if (redFlag.status === 'resolved') {
+      res.status(401).send({
+        error: "the red-flag with the id: ".concat(redFlagId, " has been resolved")
       });
     } else {
       redFlag.location = req.body.location;
 
-      _fs["default"].writeFile('server/incidents.json', JSON.stringify(_incidents["default"], null, 2), function (err) {
+      _fs["default"].writeFile('src/incidents.json', JSON.stringify(redFlags, null, 2), function (err) {
         if (err) {
-          res.send({
-            status: 424,
-            error: "redFlag update failed"
+          res.status(404).send({
+            error: 'redFlag update failed'
           });
         } else {
-          res.send({
-            status: 205,
+          res.status(200).send({
             data: [{
-              id: redFlag.location,
-              message: "red-flag location updated"
+              id: redFlag.id,
+              message: req.body.location
             }]
           });
         }
       });
     }
   } else {
-    res.send({
-      status: 400,
-      error: "the red-flag with the id:" + redFlagId + " does not exist"
+    res.status(400).send({
+      error: "the red-flag with the id: ".concat(redFlagId, " does not exist")
     });
   }
-}; //set-up end point to edit a red-flag comment
+}; // set-up end point to edit a red-flag comment
 
 
 exports.updateRedFlagLocation = updateRedFlagLocation;
 
 var updateRedFlagcomment = function updateRedFlagcomment(req, res) {
-  var redFlagId = parseInt(req.params.redFlagId, 10);
-
-  var redFlag = _incidents["default"].find(function (flag) {
+  var redFlagId = parseInt(req.params.id, 10);
+  var redFlag = redFlags.find(function (flag) {
     return flag.id === redFlagId;
   });
 
   if (redFlag) {
-    if (redFlag.status === "rejected") {
-      res.send({
-        status: 304,
-        error: "the red-flag with the id:" + redFlagId + "does not adhere to iReports code of conduct hence has been rejected"
+    if (redFlag.status === 'rejected') {
+      res.status(401).send({
+        error: "the red-flag with the id: ".concat(redFlagId, " does not adhere to iReports code of conduct hence has been rejected")
       });
-    } else if (redFlag.status === "under investigation") {
-      res.send({
-        status: 304,
-        error: "the red-flag with the id:" + redFlagId + "" + "is under investigation"
+    } else if (redFlag.status === 'under investigation') {
+      res.status(401).send({
+        error: "the red-flag with the id: ".concat(redFlagId, " is under investigation")
       });
-    } else if (redFlag.status === "resolved") {
-      res.send({
-        status: 304,
-        error: "the red-flag with the id:" + redFlagId + "" + "has been resolved"
+    } else if (redFlag.status === 'resolved') {
+      res.status(401).send({
+        error: "the red-flag with the id: ".concat(redFlagId, " has been resolved")
       });
     } else {
       redFlag.comment = req.body.comment;
 
-      _fs["default"].writeFile('server/incidents.json', JSON.stringify(_incidents["default"], null, 2), function (err) {
+      _fs["default"].writeFile('src/incidents.json', JSON.stringify(redFlags, null, 2), function (err) {
         if (err) {
-          res.send({
-            status: 424,
-            error: "redFlag update failed"
+          res.status(400).send({
+            error: 'redFlag update failed'
           });
         } else {
-          res.send({
-            status: 205,
+          res.status(200).send({
             data: [{
               id: redFlag.id,
-              message: "red flag comment updated"
+              message: req.body.comment
             }]
           });
         }
       });
     }
   }
-
-  ;
-}; //set-up end point to delete a red-flag
+}; // set-up end point to delete a red-flag
 
 
 exports.updateRedFlagcomment = updateRedFlagcomment;
 
 var deleteRedFlag = function deleteRedFlag(req, res) {
-  var redFlagId = parseInt(req.params.redFlagId, 10);
-
-  var redFlag = _incidents["default"].find(function (flag) {
+  var redFlagId = parseInt(req.params.id, 10);
+  var redFlag = redFlags.find(function (flag) {
     return flag.id === redFlagId;
   });
 
   if (redFlag) {
-    if (redFlag.status === "rejected") {
-      res.send({
-        status: 304,
-        error: "the red-flag with the id:" + redFlagId + "does not adhere to iReports code of conduct hence has been rejected"
+    if (redFlag.status === 'rejected') {
+      res.status(401).send({
+        error: "the red-flag with the id: ".concat(redFlagId, " does not adhere to iReports code of conduct hence has been rejected")
       });
-    } else if (redFlag.status === "under investigation") {
-      res.send({
-        status: 304,
-        error: "the red-flag with the id:" + redFlagId + "" + "is under investigation"
+    } else if (redFlag.status === 'under investigation') {
+      res.status(401).send({
+        error: "the red-flag with the id: ".concat(redFlagId, " is under investigation")
       });
-    } else if (redFlag.status === "resolved") {
-      res.send({
-        status: 304,
-        error: "the red-flag with the id:" + redFlagId + "" + "has been resolved"
+    } else if (redFlag.status === 'resolved') {
+      res.status(401).send({
+        error: "the red-flag with the id: ".concat(redFlagId, " has been resolved")
+      });
+    } else {
+      var newRedFlags = redFlags.filter(function (flag) {
+        return flag.id !== redFlagId;
+      });
+
+      _fs["default"].writeFile('src/incidents.json', JSON.stringify(newRedFlags, null, 2), function (err) {
+        // check status code and message
+        if (err) {
+          res.status(500).send({
+            data: [{
+              id: redFlagId,
+              message: 'An error has occurred!'
+            }]
+          });
+        } else {
+          res.status(200).send({
+            data: [{
+              id: redFlagId,
+              message: 'red flag succesfully deleted'
+            }]
+          });
+        }
       });
     }
-
-    var newRedFlags = _incidents["default"].filter(function (flag) {
-      return flag.id !== redFlagId;
-    });
-
-    _fs["default"].writeFile('server/incidents.json', JSON.stringify(newRedFlags, null, 2), function (err) {
-      // check status code and message
-      if (err) {
-        res.send({
-          status: 500,
-          data: [{
-            id: redFlagId,
-            message: "An error has occurred!"
-          }]
-        });
-      } else {
-        res.send({
-          status: 200,
-          data: [{
-            id: redFlagId,
-            message: "red flag succesfully deleted"
-          }]
-        });
-      }
-    });
   } else {
-    res.send({
-      status: 400,
-      error: "the red-flag with the id:" + redFlagId + "does not exist"
+    res.status(400).send({
+      error: "the red-flag with the id: ".concat(redFlagId, " does not exist")
     });
   }
 };

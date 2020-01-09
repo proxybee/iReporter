@@ -1,18 +1,19 @@
-body{ 
+/* body{ 
     font-family: oxygen, Georgia, sans-serif;
     font-size: 15px;
+    height: 100%;
     line-height: 1.5;
     padding: 0;
     margin: auto;
     background: #f2f2f2;   
 }
 .container{
-    width: 100%;
+    width: 90%;
     margin: auto;
-}
+} */
 
 /* Navbar styling */
-.navbar{
+/* .navbar{
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -36,16 +37,16 @@ body{
 }
 .navbar #ilogo h2::first-letter{
     color:red;
-}
-.navbar a {
+} */
+/* .navbar a {
     color:#fdfdf4;
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
     font: oxygen, Georgia, sans-serif
-    }
+    } */
 
- .inavbar li{
+ /* .inavbar li{
     display: inline;
     padding: 20px; 
  }
@@ -54,35 +55,34 @@ body{
     text-decoration: underline;
     color: #2522ce8a;
     cursor: pointer;
-}
+} */
   
 
-.navbar .inavbar{
-    right: 0px;
-    width: 40%;
-    max-width: 100%;
-    position: fixed;
-    padding-top: 10px;
+/* .navbar .inavbar{
+    font-family: Century Gothic;
+    margin: .5em 0 0 2.5em;
+    padding: .9em .5em;
 }
 
+.navbar-nav {
+    padding-left: 10% !important;
+    margin: 10px !important;
+} */
     /* form */
 
 #form-page{
-    background-image: linear-gradient(rgba(33, 3, 235, 0.63), rgba(33, 46, 235, 0.63));
-    height: 650px;
-    background-size: cover;
+    background-image: linear-gradient(rgba(33, 3, 235, 0.63), rgba(146, 179, 240, 0.418));
+    min-height: 100vh;
+    /* background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 
 .siform{
-    width: 30%;
+    width: 35%;
     padding: 10% 0 0;
-    margin-right: 36%;
-    margin-top: 3%;
-    min-height: 200px;
-    float: right;
+    margin: 0 36%;
     
 }
 
@@ -149,7 +149,7 @@ body{
 }
 
 .siform-1 p a{
-    color: #f8f7e9;
+    color:#054c9c;
     text-decoration: none;
     cursor: pointer;
     font-size: 15px;
@@ -160,9 +160,9 @@ body{
     color: #f8f7e9;
 }
 
-#sign-up{
+/* #sign-up{
     display: none;
-}
+} */
 
 #change:hover {
     text-decoration: underline;
@@ -175,54 +175,18 @@ body{
     cursor: pointer;
     color: #2522ce8a;
 }
-.footer {
-    width: 100%;
-    height: auto;
-    max-height: 120px;
-    background: #c2c2b0;
-    position: fixed;
-
-}
 
 @media(max-width: 768px){
-    .inavbar li {
-     display: inline;
-     font-size: 12x;
-     float: none;
-     padding: 0;
- }
-
- .navbar #ilogo h2{
-     font-size: 20px;
- }
-
- .ibrief{
-     width: 100%;
-     margin-bottom: 0;
-     float: none;
-     text-align: center;
-     font-size:12px;
-     padding-top: 30px;
-     margin: 0;
-     min-height: 100px;
- }
-
- .siform{
-  width : 80%;
-  margin-right: 10%;
-  padding: 0;
-  padding-top: 70px;
- }
-
- .siform-1{
-     padding: 0;
-     margin-top:20px;
-     text-align: center;
-     float: none;
- }
- 
- 
- footer{
-     text-align: center;
- }
+    .siform {
+        width: 60%;
+        text-align: center;
+        margin: 20%;
+      }
+      .siform-1
+      {
+        padding: 10px 25px;
+      }
+      /* #form-page{
+        height: fit-content;
+    } */
 } 

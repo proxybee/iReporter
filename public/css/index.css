@@ -1,32 +1,156 @@
-body{ 
-    margin: 0;
-    padding: 0;
+html, body{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+html {
+    overflow-y:scroll;
+    overflow-x:scroll;
 }
 
 /* Global */
-.container{
-    width: 100%;
-    margin: auto;
-}
+
 
 .home{
     background-image: linear-gradient(rgba(33, 3, 235, 0.63), rgba(33, 46, 235, 0.63)), url("../img/ibackground3.jpg");
-    height: 600px;
+    min-height: 100vh;
     max-height: 100%;
     padding-bottom: 50px;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;  
-    font: oxygen, Georgia, sans-serif
+    background-repeat: no-repeat;
+    font: oxygen, Century Gothic, Georgia, sans-serif;
+    /* box-sizing: inherit;
+    position: relative; */
 }
 /* Navbar styling */
-.navbar{
+
+/* .navbar-collapse {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+} */
+
+/* .collapse.show {
+    display: block;
+} */
+
+.nav-con {
+    width: 100%;
+    align-items: baseline;
+}
+
+/* .nav-con.scrolled{
+    padding-bottom: 10%;
+} */
+
+.nav-r {
+    padding-left: 20% !important;
+}
+
+.nav-item {
+    font-family: Century Gothic;
+    margin: 0 auto;
+    padding: .9em 2.5em .5em.5em;
+}
+
+/* .nav-item-divider {
+    height: 2px;
+    background: #D5DCE5;
+    margin-left: -15px;
+    margin-right: -15px;
+} */
+
+.nav-item a {
+    color: #FFF;
+    text-decoration: none;
+    font: 20px Century Gothic;
+    padding: 10px;
+    text-align: center;
+    z-index: 0;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+
+/* Top & Bottom Borders Out */
+.topBotomBordersOut a:before, .topBotomBordersOut a:after {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #FFF;
+    content:"";
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.topBotomBordersOut a:before {
+    top: 0px;
+    transform: translateY(10px);
+}
+.topBotomBordersOut a:after {
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+.topBotomBordersOut a:hover:before, .topBotomBordersOut a:hover:after {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+#ilogo{
+    float: left;
+    height: 85px;
+    margin-right: 100px;
+    max-width: 80px;
+    margin-bottom: -5px;
+    color: #fdfdf4;
+    position: fixed;
+    font-size: 1.5em !important;
+    font-weight: 600;
+    font: Century Gothic, Georgia, sans-serif
+}
+
+#ilogo::first-letter{
+    color:red;
+}
+
+@media (max-width: 700px){
+/* .navbar-collapse {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+} */
+#ilogo{
+    position: inherit;
+}
+.fixed-top {
+    position: relative !important;
+    right: auto;
+}
+li.nav-item.active {
+    color: rgba(72, 56, 205, 0.85);
+}
+.navbar-nav {
+    max-width: 80%;
+}
+.nav-item a {
+    padding: 0 0 0 10px !important;
+}
+/* .navbar>.nav-con {
+    display: flex;
+    justify-content: space-between;
+} */
+}
+/* .navbar{
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
     display: block;
-    width: 100%;  
+    width: 100%;
 }
 .navbar #ilogo{
     float: left;
@@ -57,7 +181,7 @@ body{
  .inavbar li{
     display: inline;
     padding: 20px;
-    font: oxygen, Georgia, sans-serif 
+    font: oxygen, Georgia, sans-serif
  }
 
  .inavbar li:hover {
@@ -65,7 +189,7 @@ body{
     color: #2522ce8a;
     cursor: pointer;
 }
-  
+
 
 .navbar .inavbar{
     right: 0px;
@@ -81,9 +205,24 @@ body{
     width: 20%;
     padding-top: 10px;
     max-width: 100%;
-} 
+}  */
 
 /* Brief Text on Home */
+/* .span4 .ibrief {
+    margin-right: 10px;
+    float: left;
+} */
+
+/* .ibrief{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color:#fdfdf4;
+  font-family:Century Gothic, Georgia, sans-serif;
+
+} */
+
 
 .ibrief{
     width: 45%;
@@ -91,11 +230,40 @@ body{
     margin-left: 25px;
     min-height: 200px;
     float: left;
-    font-family: oxygen, Georgia, sans-serif;
+    font-family:Century Gothic, Georgia, sans-serif;
     color:#fdfdf4;
     text-align: center;
     padding-top: 15%;
 }
+
+#irepButton{
+    font-family: Century Gothic, Georgia, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #0905f5;
+    color: #f8f7e9;
+    width: 35%;
+    border-radius: .5em;
+    border: 0;
+    margin-left: 35%;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#irepButton a {
+    color: #f8f7e9;
+    
+}
+/* .iform{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+} */
 
 .iform{
     width: 30%;
@@ -103,7 +271,33 @@ body{
     margin-right: 100px;
     min-height: 200px;
     float: right;
-    
+
+}
+form h6 {
+    color: #054c9c;
+    font-size: 1.1rem;
+}
+
+.form-check {
+    font-family:Century Gothic, Georgia, sans-serif;
+    color: #495057;
+    font-size: 18px;
+}
+
+input[type=radio] {
+    transform: scale(1.3);
+}
+.form-check-label  {
+    position: relative;
+    display: block;
+    /* padding-left: 0; */
+    text-align: left;
+    margin: 0 0 12px 0 !important;
+}
+
+.form-check .form-check-input {
+    width: 60px !important;
+    margin: 10px 0 !important;
 }
 
 .iform-1{
@@ -118,33 +312,49 @@ body{
 }
 
  .iform-1 input{
-    font-family: oxygen, Georgia, sans-serif;
+    font-family:Century Gothic, Georgia, sans-serif;
     background: #f2f2f2;
     width: 100%;
     border: 0;
     margin: 0 0 15px;
     padding: 15px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 18px;
     overflow: overlay;
     cursor: pointer;
 }
 
+/* .iform-1 #result{
+   font-family:Century Gothic, Georgia, sans-serif;
+   background: #f2f2f2;
+   width: 100%;
+   border: 0;
+   margin: 0 0 15px;
+   padding: 15px;
+   box-sizing: border-box;
+   font-size: 14px;
+   overflow: overlay;
+   cursor: pointer;
+} */
+
 .iform-1 button {
-    font-family: oxygen, Georgia, sans-serif;
+    font-family:Century Gothic, Georgia, sans-serif;
     text-transform: uppercase;
     outline: 0;
     background: #0905f5;
     color: #f8f7e9;
     width: 80%;
+    border-radius: .5em;
     border: 0;
     padding:10px;
     font-size: 14px;
     cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
 
-.iform-1 h2{
-    font-family: oxygen, Georgia, sans-serif;
+.iform-1 h2 h6{
+    font-family: Century Gothic, Georgia, sans-serif;
     /* text-transform: uppercase; */
     font-size: 14px;
 }
@@ -157,10 +367,10 @@ body{
 
 .iform-1 h3{
     margin: 15px 0 0;
-    font-family: oxygen, Georgia, sans-serif;
+    font-family: Century Gothic, Georgia, sans-serif;
     color: #f8f7e9;
     display: block;
-    font-size: 1.17em;
+    font-size: 1.7em;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
@@ -169,18 +379,41 @@ body{
 }
 
 .iform-1 p a{
-    color: #f8f7e9;
+    color: #054c9c;
     text-decoration: none;
     cursor: pointer;
     font-size: 15px;
 }
 
 .iform-1 button:hover, .iform-1 button:active{
-    background: #2905f58c;
-    color: #f8f7e9;
+    background-color: #2905f58c;
+    color: white;
 }
 
-#sign-up{
+@media (max-width: 780px) {
+    /* .fixed-top {
+        right: auto !important;
+    } */
+  .ibrief {
+    width: 70%;
+    text-align: center;
+    margin-left: 15%;
+  }
+  .iform {
+    width: 70%;
+    text-align: center;
+    margin-right: 15%
+  }
+  .iform-1
+  {
+    padding: 10px 25px;
+  }
+  /* .nav-item {
+    padding: .8em 0 0 .5em;
+} */
+}
+
+#redf{
     display: none;
 }
 
@@ -198,11 +431,11 @@ body{
 
 /* Flag/Intervention Form */
 
-.icHolder {
-    font-family: oxygen, Georgia, sans-serif;
-    background: #f2f2f2;
+.form-control {
+    font-family: Century Gothic, Georgia, sans-serif;
+    background: #f2f2f2 !important;
     width: 100%;
-    height: 40px;
+    height: 50px !important;
     border: 0;
     margin: 0 0 15px;
     padding: 0 0 10px;
@@ -211,14 +444,14 @@ body{
     z-index: 999;
 }
 
-.icHolder a {
+/* .icHolder a {
     line-height: 15px;
     background-position: 0 -113px;
     text-align: center;
 
-}
+} */
 
-.icHolder ul {
+.icSelector option {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -231,8 +464,9 @@ body{
 .icSelector:link, .icSelector:visited, .icSelector:hover {
     color: #141313b2;
     outline: none;
+    width: 100%;
     text-decoration: none;
-    
+
 }
 
 .icSelector:hover {
@@ -241,8 +475,8 @@ body{
     color: #2522ce8a;
 }
 
-.icSelector {
-    font-family: oxygen, Georgia, sans-serif;
+.icSelector option {
+    font-family: century Gothic, oxygen, Georgia, sans-serif;
     background: #f2f2f2;
     width: 100%;
     border: 0;
@@ -252,38 +486,30 @@ body{
     font-size: 14px;
 }
 
- #icOptions {
+.icSelector option {
     display: none;
     list-style: none;
 }
 
-#icOptions.active{
-    display: inline-block;                                                                                                                                                                                                                                                                                 
+.icSelector option.active{
+    display: inline-block;
 }
 
-.icOptions > li {
+.icOptions > option {
     padding: 0 5px;
     cursor: pointer;
-} 
-
-.icOptions li a{
-    color: #060886;
-    text-decoration: none;
-} 
-
-.footer {
-    width: 100%;
-    height: auto;
-    max-height: 120px;
-    background: #c2c2b0;
-    position: fixed;
-
 }
 
-@media(max-width: 768px){
+.icOptions option a{
+    color: #060886;
+    text-decoration: none;
+}
+
+
+/* @media(max-width: 768px){
        .inavbar li {
         display: inline;
-        /* text-align: center; */
+        text-align: center;
         font-size: inherit;
         float: none;
         padding: 0;
@@ -315,10 +541,10 @@ body{
         margin:0;
         text-align: center;
         float: none;
-    }
-    
-    
+    } */
+
+/*
     footer{
         text-align: center;
     }
-} 
+}*/

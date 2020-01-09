@@ -1,0 +1,35 @@
+.hiw-container {
+    padding: 10%;
+}
+/* .how-section1 h4{
+    color: #ffa500;
+    font-weight: bold;
+    font-size: 25px;
+} */
+/* .how-section1 .subheading{
+    color: #3931af;
+    font-size: 20px;
+} */
+.how-section1 .row
+{
+    margin-top: 15%;
+}
+.how-img 
+{
+    text-align: center;
+}
+.how-img img{
+    width: 25%;
+}
+
+.how-text {
+    font-family:Century Gothic, Georgia, sans-serif;
+    color:#fdfdf4;
+    font-size: 16px;
+}
+
+@media (max-width: 780px){
+    .how-img img{
+        width: 40%;
+    }
+}

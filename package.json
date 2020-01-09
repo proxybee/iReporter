@@ -2,14 +2,16 @@
   "name": "ireporter",
   "version": "1.0.0",
   "description": "An eye witness app to fight corruption in Africa",
-  "main": "index.js",
+  "main": "app",
   "scripts": {
-    "build": "babel server -d dist",
-    "babel": "@babel/preset-env server -d dist",
-    "test": "babel-node spec/run.js",
-    "serve": "nodemon server/app.js --exec babel-node",
-    "start": "babel-node server/app.js"
-
+    "compile": "babel src -d dist",
+    "start": "npm run compile && node ./dist/app.js",
+    "dev": "nodemon --ignore ./public ./src/app.js --exec babel-node",
+    "rundb": "babel-node dist/db/db.js --exit",
+    "createTable": "babel-node ./src/db/createTable.js --exit",
+    "dropTable": "babel-node ./src/db/dropTable.js --exit",
+    "test": "npm run compile && istanbul cover node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=src/spec/support/jasmine.json && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "lint": "eslint . --fix --ignore-path .eslintignore"
   },
   "repository": {
     "type": "git",
@@ -29,18 +31,30 @@
     "@babel/core": "^7.1.5",
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.5",
+    "@types/bcrypt": "^3.0.0",
+    "@types/dotenv": "^6.1.0",
     "babel-preset-airbnb": "^3.0.1",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "nodemon": "^1.18.7",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "node-modules": "^1.0.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "pg": "^7.12.1",
     "winston": "^3.1.0"
   },
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "eslint": "^5.8.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "istanbul": "^0.4.5",
     "jasmine": "^3.3.0",
-    "request": "^2.88.0",
+    "nodemon": "^1.19.4",
     "supertest": "^3.3.0"
   }
 }

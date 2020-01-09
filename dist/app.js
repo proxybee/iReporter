@@ -7,24 +7,31 @@ exports["default"] = void 0;
 
 var _express = _interopRequireDefault(require("express"));
 
+var _path = _interopRequireDefault(require("path"));
+
 var _winston = _interopRequireDefault(require("winston"));
 
-var _redFlagRoutes = _interopRequireDefault(require("./routes/red-flag-routes"));
+var _incidentRoutes = _interopRequireDefault(require("./routes/incident-routes"));
+
+var _userRoute = _interopRequireDefault(require("./routes/user-route"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/* eslint-disable no-console */
 // call the packages the product needs
+// initialize winston logger
 var logger = _winston["default"].createLogger({
   transports: [new _winston["default"].transports.Console()]
-});
+}); // initialize new express app
 
-var app = (0, _express["default"])(); // get homepage
 
-app.get('/', function (res, req) {
-  res.status(200).send('hi, server is running fine');
-});
-app.use('/api/v1', _redFlagRoutes["default"]);
-app.use(_express["default"]["static"](__dirname + "/public"));
+var app = (0, _express["default"])(); // load all files in public directory
+
+app.use(_express["default"]["static"](_path["default"].resolve("".concat(__dirname, "/../public")))); // createTables();
+// import routes
+
+app.use('/api/v1', _incidentRoutes["default"]);
+app.use('/api/v1/users', _userRoute["default"]);
 var port = process.env.PORT || 3020;
 app.listen(port, function () {
   return logger.info("listening on port ".concat(port, "..."));

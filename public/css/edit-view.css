@@ -1,0 +1,192 @@
+body{ 
+    font-family: oxygen, Georgia, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: auto;
+    background: #f2f2f2;   
+}
+
+/* Global */
+.container{
+    width: 100%;
+    margin: auto;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+/* navbar */
+
+/* .navbar{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 100%;  
+}
+.navbar #ilogo{
+    float: left;
+    height: 85px;
+    margin-right: 10px;
+    max-width: 80px;
+    margin-bottom: -25px;
+}
+.navbar #ilogo h2{
+    color: #fdfdf4;
+    margin: 0;
+    position: fixed;
+    font-size: 28px;
+    font-weight: 600;
+}
+.navbar #ilogo h2::first-letter{
+    color:red;
+}
+.navbar a {
+    color:#fdfdf4;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    font: oxygen, Georgia, sans-serif
+    }
+
+ .inavbar li{
+    display: inline;
+    padding: 20px; 
+ }
+
+ .inavbar li:hover {
+    text-decoration: underline;
+    color: #2522ce8a;
+    cursor: pointer;
+}
+  
+
+.navbar .inavbar{
+    right: 0px;
+    width: 40%;
+    max-width: 100%;
+    position: fixed;
+    padding-top: 10px;
+} */
+/* ireport view page */
+.ireport-header{
+    background-image: linear-gradient(rgba(33, 3, 235, 0.63), rgba(33, 46, 235, 0.63)), url("../img/ibackground3.jpg");
+    height: 10vh;
+    background-position: bottom -50%;
+    width: 100% !important;
+}
+
+.ireport-view{
+
+    width: 60%;
+    margin: 0 20% 20px 20%;
+    height: 100%;
+}
+
+.report-single{
+    background-color: #fff;
+    overflow: auto;
+   
+}
+
+figure img{
+    margin-left: 10%;
+    width: 80%;
+}
+
+.report-single h2{
+    text-align: center;
+    padding-top: 8px;
+    margin-bottom: -10px;
+    text-transform: capitalize;
+    line-height: 10px;
+    padding-bottom: 20px;
+} 
+.view-desc ul li{
+    padding: 0 50px;
+    color: rgb(51, 49, 49);
+    background: url(img-li.png) no-repeat center left;
+    list-style: none;
+}
+
+.view-desc ul {
+    padding: 0 50px;
+    font-weight: 200px;
+    font-size: 15px;
+}
+
+.view-desc li{
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+
+.view-desc p {
+    padding: 0 50px;
+    color: #0a0a02;
+    font-family: oxygen, Georgia, sans-serif;
+
+}
+
+.report-single .report-date ul li{
+    border-bottom: solid 1px #efefef;
+}
+.report-single ul li:last-child {
+    border-right: none;
+}
+
+.report-date ul li {
+    padding: 10px 2px;
+    text-align: center;
+    width: 15%; 
+    border: solid 1px #efefef;
+    border-left: none;
+    border-bottom: none;
+    list-style: none;
+
+}
+
+.report-date li{
+    float: left;
+}
+
+.space{
+    float: none;
+    clear: both;
+}
+
+
+@media(max-width: 768px){
+    .inavbar li {
+        display: inline;
+        text-align: center;
+        font-size: inherit;
+        display: none;
+    }
+    /* .inavbar:placeholder-shown {
+        font-display: block;
+    } */
+    .ireport-header {
+        background-image: linear-gradient(rgba(33, 3, 235, 0.63), rgba(33, 46, 235, 0.63)), url(../img/ibackground3.jpg);
+        height: max-content;
+        background-position: bottom -50%;
+        width: 100% !important;
+    }
+    .report-single h2 {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    .ireport-view {
+        width: 90%;
+        margin: 0;
+    }
+    .report-date{
+        text-align: center; 
+    }
+} 
+
+ 

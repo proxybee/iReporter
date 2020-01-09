@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>iReporter | Admin</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- iReporter Stylsheet -->
-<link rel="stylesheet" type="text/css" media="all" href="css/main.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>iReporter | Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- iReporter Stylsheet -->
+    <link rel="stylesheet" type="text/css" media="all" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <div class="acontainer">
         <header>
             <div id="anavbar">
                 <div id="ilogo">
-                    <h2>iReporter<a href="index.html"></a></h2>
+                    <a href="index.html">
+                        <h2>iReporter</h2>
+                    </a>
                 </div>
-                <div class = "inavbar">
+                <div class="inavbar">
                     <ul>
                         <li><a href="index.html">iReport Admin <span>Panel</span></a></li>
-                        <li><a href="" id ="alogout">Logout</a></li>
+                        <li><a href="" id="logout">Logout</a></li>
                     </ul>
                 </div>
-            </div> 
+            </div>
         </header>
-        <div class ="sidenav">
+        <div class="sidenav">
             <nav>
-                <div id= "adminmenu">
+                <div id="adminmenu">
                     <ul>
-                        <li><a href="" id ="clhome">iReports Home</a></li>
-                        <li><a href="" id ="clflag">Red Flags</a></li>
-                        <li><a href="" id ="clinterv">Interventions</a></li>
-                        <li><a href="" id ="clset">Settings</a></li>
+                        <li><a href="" id="clhome">iReports Home</a></li>
+                        <li><a href="" id="clflag">Red Flags</a></li>
+                        <li><a href="" id="clinterv">Interventions</a></li>
+                        <li><a href="" id="clset">Settings</a></li>
                         </li>
                     </ul>
                 </div>
-            </nav>              
+            </nav>
         </div>
         <div id="iadmin">
             <div class="activecont">
@@ -44,108 +49,131 @@
                         iReports Home
                     </div>
                     <div id=display>
-                        <table id="tsum">
-                            <tr>
-                                <th> iReports <br> 960</th>
-                            </tr>
+                        <table>
+                            <tbody id="tsum">
+                                <h3>Total iReports</h3>
+                                <tr>
+                                    <th id="incidentsT">
+                                        960
+                                    </th>
+                                </tr>
+                            </tbody>
                         </table>
                         <table id="tsum">
-                            <tr>
-                                <th>Red-flags <br> 400</th>
-                            </tr>
+                            <tbody>
+                                <h3>Total Red-Flags</h3>
+                                <tr>
+                                    <th id="redFlagT">
+                                        00
+                                    </th>
+                                </tr>
+                            </tbody>
                         </table>
                         <table id="tsum">
-                            <tr>
-                                <th>Interventions <br> 560</th>
-                            </tr>
+                            <tbody>
+                                <h3>Total Interventions</h3>
+                                <tr>
+                                    <th id="interT">
+                                        00
+                                    </th>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
-                <div class = "space"></div>
+                <div class="space"></div>
                 <div id="flaga">
                     <div class="title">
                         Red Flags
                     </div>
                     <div id=display>
-                        <table id = "tflag">
-                            <tr>
-                                <th>Date</th>
-                                <th>Name</th>
-                                <th>Title</th>
-                                <th>Status</th>
-                                <th>Admin Update</th>
-                            </tr>
-                            <tr>
-                                <td>20 N0v 2018</td>
-                                <td>Biodun Oga</td>
-                                <td>Water pollution</td>
-                                <td>Invetigating</td>
-                                <td><button>update</button></td>
-                            </tr>
-                            <tr>
-                                <td>20 N0v 2018</td>
-                                <td>Biodun Oga</td>
-                                <td>Water pollution</td>
-                                <td>Invetigating</td>
-                                <td><button>update</button></td>
-                            </tr>
-                            <tr>
-                                <td>20 N0v 2018</td>
-                                <td>Biodun Oga</td>
-                                <td>Water pollution</td>
-                                <td>Invetigating</td>
-                                <td><button>update</button></td>
-                            </tr>
+                        <table id="tflag" cellpadding="0" cellspacing="0" border="0">
+                            <thead id="tableHead">
+                                <tr>
+                                    <th data-name="id">ID</th>
+                                    <th data-name="subject">SUBJECT</th>
+                                    <th data-name="comment">COMMENT</th>
+                                    <th data-name="">MEDIA</th>
+                                    <th data-name="location">LOCATION</th>
+                                    <th data-name="status">STATUS</th>
+                                    <th data-name="created_date">CREATED DATE</th>
+                                    <th data-name="modified_date">MODIFIED DATE</thdata-name="image">
+                                    <th>UPDATE</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <tr>
+                                    <td>20 N0v 2018</td>
+                                    <td>Biodun Oga</td>
+                                    <td>Water pollution</td>
+                                    <td>Invetigating</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><button><a href="adedit-view.html">update</a></button></td>
+                                </tr>
+                            </tbody>
                         </table>
+                        <tfoot id="tFooter">
+                            <tr>
+                                <td><button><a href="#">Next</a></button></td>
+                                <td><button><a href="#">Back</a></button></td>
+                            </tr>
+                        </tfoot>
                     </div>
                 </div>
-                <div class = "space"></div>
+                <div class="space"></div>
                 <div id="interva">
                     <div class="title">
                         Interventions
                     </div>
-                    <table id = "tflagi">
-                        <tr>
-                            <th>Date</th>
-                            <th>Name</th>
-                            <th>Title</th>
-                            <th>Status</th>
-                            <th>Admin Update</th>
-                        </tr>
-                        <tr>
-                            <td>20 N0v 2018</td>
-                            <td>Biodun Oga</td>
-                            <td>Water pollution</td>
-                            <td>Invetigating</td>
-                            <td><button>update</button></td>
-                        </tr>
-                        <tr>
-                            <td>20 N0v 2018</td>
-                            <td>Biodun Oga</td>
-                            <td>Water pollution</td>
-                            <td>Invetigating</td>
-                            <td><button>update</button></td>
-                        </tr>
-                        <tr>
-                            <td>20 N0v 2018</td>
-                            <td>Biodun Oga</td>
-                            <td>Water pollution</td>
-                            <td>Invetigating</td>
-                            <td><button>update</button></td>
-                        </tr>
+                    <table id="tflagi" cellpadding="0" cellspacing="0" border="0">
+                        <thead id="tableHead">
+                            <tr>
+                                <th data-name="id">ID</th>
+                                <th data-name="subject">SUBJECT</th>
+                                <th data-name="comment">COMMENT</th>
+                                <th data-name="image" data-name="video">MEDIA</th>
+                                <th data-name="location">LOCATION</th>
+                                <th data-name="status">STATUS</th>
+                                <th data-name="created_date">CREATED DATE</th>
+                                <th data-name="modified_date">MODIFIED DATE</thdata-name="image">
+                                <th>UPDATE</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr>
+                                <td>20 N0v 2018</td>
+                                <td>Biodun Oga</td>
+                                <td>Water pollution</td>
+                                <td>Invetigating</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><button><a href="adedit-view.html">update</a></button></td>
+                            </tr>
+                        </tbody>
                     </table>
+                    <tfoot id="tFooter">
+                        <tr>
+                            <td><button><a href="#">Next</a></button></td>
+                            <td><button><a href="#">Back</a></button></td>
+                        </tr>
+                    </tfoot>
                 </div>
                 <div id="settingsa">
                     <div class="title">
                         Settings
                     </div>
-                    <div class = "aiform">
-                        <div class = "iform-1">
-                            <form action="/user.html" method = "POST" id ="sign-in">
+                    <div class="aiform">
+                        <div class="iform-1">
+                            <form action="/user.html" method="POST" id="sign-in" autocomplete="off">
                                 <h3>Change password</h3>
-                                <input type="password" placeholder="Current password">
-                                <input type="password" placeholder="New password">
-                                <input type="password" placeholder="Confirm New password">
+                                <input type="password" placeholder="Current password" autocomplete="off">
+                                <input type="password" placeholder="New password" autocomplete="off">
+                                <input type="password" placeholder="Confirm New password" autocomplete="off">
                                 <button>Change Password</button>
                                 <p><a href="">Delete Account</a></p>
                             </form>
@@ -158,7 +186,10 @@
     <footer>
         <p>iReport Inc, Copyright &copy; 2018</p>
     </footer>
+    <script type="text/javascript" src="js/dashboard-adm.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/change.js"></script>
+    <script type="text/javascript" src="js/logout.js"></script>
 </body>
+
 </html>

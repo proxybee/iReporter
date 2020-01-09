@@ -139,7 +139,6 @@
     ],
     "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
   },
-
   {
     "id": 9,
     "createdOn": "11/28/2018",
@@ -296,6 +295,108 @@
   {
     "id": 19,
     "createdOn": "12/1/2018,",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 19,
+    "createdOn": "12/3/2018,",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 19,
+    "createdOn": "12/5/2018,",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 20,
+    "createdOn": "12/5/2018,",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 21,
+    "createdOn": "12/5/2018,",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 23,
+    "createdOn": "12/5/2018,",
+    "createdBy": "Prince",
+    "type": "intervention",
+    "location": "17.5672, 4.84940",
+    "status": "under investigation",
+    "image": [
+      "image",
+      "image"
+    ],
+    "video": [
+      "image",
+      "image"
+    ],
+    "comment": "hi, please help, there was a discharge of chemicals in our small community river and people are continuosely getting poisoned"
+  },
+  {
+    "id": 24,
+    "createdOn": "12/5/2018,",
     "createdBy": "Prince",
     "type": "intervention",
     "location": "17.5672, 4.84940",

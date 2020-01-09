@@ -10,79 +10,107 @@
     <!-- iReporter Stylsheet -->
     <link rel="stylesheet" type="text/css" media="all" href="css/index.css" />
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <div class="container">
+    <div class="landing">
         <header>
             <div class="home">
-                <div class="navbar">
-                    <div id="ilogo">
-                        <h2 href="index.html">iReporter</h2>
-                    </div>
-                    <div class="inavbar">
-                        <ul>
-                            <li><a href="index.html">iReport</a></li>
-                            <li><a href="admin.html">Admin</a></li>
-                            <li><a href="Userp.html">User</a></li>
-                            <li><a href="sign-in.html">sign-In/Sign-Up</a></li>
-                            </li>
-                        </ul>
-                    </div>
+              <nav class="navbar navbar-light navbar-expand-md justify-content-left fixed-top">
+                <div class="nav-con">
+                <a class="navbar-brand" id=ilogo href="index.html">iReporter</a>
+                  <button class="navbar-toggler pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar2" aria-controls="collapsingNavbar2" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="clearfix"></div>
+                  <div class="navbar-collapse collapse justify-content-center align-items-right w-100" id="collapsingNavbar2">
+                  <ul class="topBotomBordersOut navbar-nav text-center">
+                    <li class="nav-item active"><a href="index.html">iReport<span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a class="" href="howitWorks.html">How It Works</a></li>
+                    <li class="nav-item"><a class="" href="userp.html">User</a></li>
+                  </ul>
+                  <ul class="topBotomBordersOut navbar-nav nav-r text-center">
+                    <li class="nav-item"><a class="" href="sign-in.html">SignIn</a></li>
+                    <li class="nav-item"><a class="" href="sign-up.html">SignUp</a></li>
+                  </ul>
                 </div>
-                <div class="ibrief">
-                    <h1>Welcome To iReporter</h1>
-                    <p>iReporter is a platform where you can forward experienced/witnessed corrupt and unjust acts
-                        especially by
-                        the Government, you can also bring our attention to situations that needs urgent intervention.
-                        Ensure to submit a report whenever you witness any, we will investigate and Intervene as
-                        appropriate
-                    </p>
-                </div>
-                <div class="iform">
-                    <div class="iform-1">
-                        <div id=ireport-form>
-                            <form action="" method="POST" id="sign-up">
-                                <h2 href="index.html">iReport</h2>
-                                <input type="text" placeholder="username">
-                                <input type="textarea" placeholder="enter incident">
-                                <input type="map" placeholder="Insert Long, Lat">
-                                <button type="button" id="flagButton">Report</button>
-                                <p id="change"><a>iReport Intervene Here</a></p>
-                            </form>
-                            <form action="" method="POST" id="sign-in">
-                                <h3>iReport</h3>
-                                <input type="text" placeholder="user name">
-                                <div type="selection" id="icHolder" class="icHolder">
-                                    <a href="#" class="icSelector" id="iclist">select intervention</a>
-                                    <ul id="icOptions" class="icOptions">
-                                        <li><a value="badRoad">Bad Road</a></li>
-                                        <li><a value="CollapsedBrigdge">Collapsed Bridge</a></li>
-                                        <li><a value="Flooding">Flooded Area</a></li>
-                                        <li><a value="healthHazard">Health Hazard</a></li>
-                                        <li><a value="input">Other</a><input type="text" placeholder="specify"></li>
-                                    </ul>
-                                </div>
-                                <input type="textarea" placeholder="enter incident">
-                                <input type="map" placeholder="Insert Long, Lat" id="locate">
-                                <!-- enable to upload and post on submit -->
-                                <input type="file" accept="video/*,image/*" placeholder="Click field to upload Video Or image"
-                                    id="vidim">
-                                <button type="button" id="veneButton">Intervene</button>
-                                <p id="change1"><a>iReport Red-flag Here</a></p>
-                            </form>
+              </div>
+              </nav>
+              <div class="row align-items-center">
+                <div class="clear">
+                  <div class="ibrief" class="col-md-6 col-sm-12 left">
+                        <h1>Welcome To iReporter</h1>
+                        <p>iReporter is a platform where you can forward experienced/witnessed corrupt and unjust acts
+                            especially by
+                            the Government, you can also bring our attention to situations that needs urgent intervention.
+                            Ensure to submit a report whenever you witness any, we will investigate and Intervene as
+                            appropriate
+                        </p>
+                        <button type="button" id="irepButton">iReport Here</button>
+                    </div>
+                    <div class="iform" class="col-md-6 col-sm-12 right" id="ireport-form">
+                      <div class="iform-1">
+                        <div >
+                          <form autocomplete="off" method="POST" id="submitIncident" autocomplete="off">
+                            <h3>iReport</h3>
+                            <h6>Select Incident Type</h6>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" value="redFlag" id="defaultCheck" id="rad"/>
+                              <label class="form-check-label" for="defaultCheck">
+                                Red Flag
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" value="intervention" id="defaultCheck1" id="rad1"/>
+                              <label class="form-check-label" for="defaultCheck1">
+                                Intervention
+                              </label>
+                            </div>
+                            <div type="selection" class="icHolder">
+                              <select class="form-control" class="icSelector" id="icHolder">
+                                <option >Select Subject</option>
+                                <option value="badRoad">Bad Road</option>
+                                <option value="CollapsedBrigdge">Collapsed Bridge</option>
+                                <option value="Flooding">Flooded Area</option>
+                                <option value="healthHazard">Health Hazard</option>
+                                <option value="other">Other (Please State)</option>
+                              </select>
+                            </div>
+                              <input type="textarea" placeholder="Enter other" id="otherValue">
+                              <input type="textarea" placeholder="State Intervention" id="intText">
+                              <input type="textarea" placeholder="Enter Red Flag" id="redText">
+                              <input id="result" id="location" onclick="showPosition();" value = "" type="Cordinates" placeholder="input Geolocation">
+                            <!-- enable to upload and post on submit -->
+                              <input type="file" accept="video/*,image/*" placeholder="Click field to upload Video Or image" id="vidim"
+                              size="40">
+                            <p id="created"></p>
+                            <button>Intervene</button>
+                            <p id="change1"><a href="sign-in.html">SignIn to Post Incident</a></p>
+                          </form>
                         </div>
+                      </div>
                     </div>
                 </div>
-            </div>
+             </div>
+           </div>
         </header>
     </div>
-    <footer>
-        <p>iReport Inc, Copyright &copy; 2018</p>
+    <footer class="page-footer font-small special-color-grey justify-content-center">
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="index.html">Bitech Solutions</a>
+      </div>
+      <!-- Copyright -->
+
     </footer>
-    <script type="text/javascript" src="js/change.js"></script>
+    <script type="text/javascript" src="js/newincident.js"></script>
     <script type="text/javascript" src="js/list.js"></script>
+    <script type="text/javascript" src="js/location.js"></script>
 </body>
 
 </html>

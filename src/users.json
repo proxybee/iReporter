@@ -1,0 +1,87 @@
+[
+    {
+        "id": 1,
+        "firstname": "Tolu",
+        "lastname": "jimmy",
+        "othernames": "",
+        "email": "edjaj@gini.com",
+        "phoneNumber":"07083927181" ,
+        "username": "tami",
+        "registered": "03/05/2018",
+        "isAdmin": "no"
+    },
+
+    {
+        "id": 2,
+        "firstname": "Buchy",
+        "lastname": "Kamsi",
+        "othernames": "",
+        "email": "disacn@yhsn.com",
+        "phoneNumber":"07083897181" ,
+        "username": "swifty",
+        "registered": "06/05/2018",
+        "isAdmin": "no"
+    },
+
+    {
+        "id": 3,
+        "firstname": "Isi",
+        "lastname": "James",
+        "othernames": "",
+        "email": "isijij@gini.com",
+        "phoneNumber":"07085927181" ,
+        "username": "jami",
+        "registered": "09/06/2018",
+        "isAdmin": "no"
+    },
+
+    {
+        "id": 4,
+        "firstname": "Fred",
+        "lastname": "Ogugu",
+        "othernames": "",
+        "email": "eogj@cmls.com",
+        "phoneNumber":"07085647181" ,
+        "username": "fredie",
+        "registered": "11/06/2018",
+        "isAdmin": "no"
+    },
+
+    {
+        "id": 5,
+        "firstname": "Didun",
+        "lastname": "Temi",
+        "othernames": "",
+        "email": "etin@handi.org",
+        "phoneNumber":"08183927181" ,
+        "username": "Tami",
+        "registered": "19/06/2018",
+        "isAdmin": "no"
+    },
+
+    {
+        "id": 6,
+        "firstname": "Foster",
+        "lastname": "Papus",
+        "othernames": "",
+        "email": "semsi@ireport.com",
+        "phoneNumber":"07983927181" ,
+        "username": "paps",
+        "registered": "04/07/2018",
+        "isAdmin": "yes"
+    },
+
+    {
+        "id": 7,
+        "firstname": "Madia",
+        "lastname": "luis",
+        "othernames": "",
+        "email": "wajyj@trion.com",
+        "phoneNumber":"07083927181" ,
+        "username": "jasmin",
+        "registered": "03/05/2018",
+        "isAdmin": "no"
+    }
+    
+    
+]

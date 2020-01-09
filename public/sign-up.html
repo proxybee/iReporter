@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>iReporter | Join Us</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- iReporter Stylsheet -->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/index.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/sign-in.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/sign-in.css" />
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <!--Header section-->
-    <div class="landing">
+    <div class="">
         <div id="form-page">
             <header>
                 <div class="">
                     <nav class="navbar inavbar navbar-light navbar-expand-md justify-content-left fixed-top">
                         <div class="nav-con">
                             <a class="navbar-brand" id=ilogo href="index.html">iReporter</a>
-                            <button class="navbar-toggler pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar2"
-                                aria-controls="collapsingNavbar2" aria-expanded="true" aria-label="Toggle navigation">
+                            <button class="navbar-toggler pull-right" type="button" data-toggle="collapse"
+                                data-target="#collapsingNavbar2" aria-controls="collapsingNavbar2" aria-expanded="true"
+                                aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="clearfix"></div>
@@ -36,9 +39,9 @@
                                     <li class="nav-item"><a class="" href="userp.html">User</a></li>
                                 </ul>
                                 <ul class="topBotomBordersOut navbar-nav nav-r text-center">
-                                    <li class="nav-item active"><a class="" href="sign-in.html">SignIn<span
+                                    <li class="nav-item"><a class="" href="sign-in.html">SignIn</a></li>
+                                    <li class="nav-item active"><a class="" href="sign-up.html">SignUp<span
                                                 class="sr-only">(current)</span></a></li>
-                                    <li class="nav-item"><a class="" href="sign-up.html">SignUp</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -47,32 +50,35 @@
                 <div class="row">
                     <div class="siform">
                         <div class="siform-1">
-                            <form method="POST" id="signInForm" autocomplete="off">
-                                <h3>Sign In</h3>
-                                <input type="text" placeholder="email or username" id = "email" required />
-                                <input type="password" placeholder="password" id = "password" required autocomplete="off" />
-                                <button>Sign In</button>
-                                <p>Not an iReporter? <a href='sign-up.html'>Sign Up here</a></p>
+                            <form method="POST" id="signUpForm" autocomplete="off">
+                                <p id="msg"></p>
+                                <h3>Sign Up</h3>
+                                <input type="text" placeholder="first name" id="firstname" required />
+                                <input type="text" placeholder="last name" id="lastname" required />
+                                <input type="text" placeholder="user name" id="username" required />
+                                <input type="email" placeholder="email id" id="email" required />
+                                <input type="number" placeholder="mobile" id="phone_number" minlength="7" maxlength="14" />
+                                <input type="password" placeholder="password" id="password" required autocomplete=""/>
+                                <button>Sign Up</button>
+                                <p>Already an iReporter?<a href="sign-in.html">Sign In here</a></p>
                             </form>
                         </div>
                     </div>
                 </div>
-        </header>
+        </div>
     </div>
-        <!--Form Section-->
-    
-        <footer class="page-footer font-small special-color-grey justify-content-center">
-    
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">© 2018 Copyright:
-                <a href="index.html">Bitech Solutions</a>
-            </div>
-            <!-- Copyright -->
-    
-        </footer>
-    </div>
-  <!--iReport Javascript-->
-<script type="text/javascript" src="js/signin.js"></script>
-<script type="text/javascript" src="js/list.js"></script>
+    <footer class="page-footer font-small special-color-grey justify-content-center">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="index.html">Bitech Solutions</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!--iReport Javascript-->
+    <script type="text/javascript" src="js/signup.js"></script>
+    <script type="text/javascript" src="js/list.js"></script>
 </body>
+
 </html>

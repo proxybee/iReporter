@@ -1,5 +1,6 @@
-Todo.txt
 node_modules
-data.txt
-incident.txt
 package-lock.json
+dist
+coverage
+.env
+txt
