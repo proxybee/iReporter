@@ -287,11 +287,18 @@ tfoot {
 }
 #tflag td,
 #tflagi td {
-  border: solid 1px;
-  border-top: none;
-  text-align: center;
-  max-height: 60px;
-  width: 50px;
+    border: solid 1px;
+    border-top: none;
+    text-align: center;
+    height: 60px;
+    width: 50px;
+    max-width: 80px;
+    overflow-wrap: break-word;
+    resize: auto;
+}
+
+.tdedit td:nth-child(3){
+  max-width: 200px !important;
 }
 
 td button {

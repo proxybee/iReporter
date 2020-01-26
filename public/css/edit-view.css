@@ -101,7 +101,7 @@ figure img{
 .report-single h2{
     text-align: center;
     padding-top: 8px;
-    margin-bottom: -10px;
+    margin: 10px 0 -10px 0;
     text-transform: capitalize;
     line-height: 10px;
     padding-bottom: 20px;
@@ -142,7 +142,7 @@ figure img{
 .report-date ul li {
     padding: 10px 2px;
     text-align: center;
-    width: 15%; 
+    width: 33.3%; 
     border: solid 1px #efefef;
     border-left: none;
     border-bottom: none;
@@ -159,6 +159,153 @@ figure img{
     clear: both;
 }
 
+.container {
+    box-sizing: border-box;
+  }
+  
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+    background-color: #4565a0;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #bdc5d4;
+  }
+  
+  .container {
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  .row{
+      margin-top: 15px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 15%;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  .col-75 input{
+      width: 50%;
+      padding: .5rem 1rem;
+      height: 50px;
+      border: 1px solid grey;
+  }
+  /* input[type="file"] {
+    display: none;
+} */
+.col-75 label{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    height: 3rem;
+    width: 51.5%;
+}
+
+.vidim input {
+    margin: 0;
+    filter: alpha(opacity=0);
+    display: none;
+}
+
+/* .file-custom {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    height: 2.5rem;
+    width: 100%;
+    padding: .5rem 1rem;
+    line-height: 1.5;
+    color: #555;
+    background-color: #fff;
+    border: .075rem solid #ddd;
+    border-radius: .25rem;
+    box-shadow: inset 0 0.2rem 0.4rem rgba(0,0,0,.05);
+} */
+
+.file-custom:before {
+    /* position: absolute; */
+    z-index: 6;
+    display: block;
+    text-align: center;
+    content: "Upload Media";
+    height: 3rem;
+    padding: .5rem 1rem;
+    line-height: 1.5;
+    color: #555;
+    background-color: #eee;
+    border: .075rem solid #ddd;
+    border-radius: 0 .25rem .25rem 0;
+}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+.commentContain {
+    /* width: 650px; */
+    max-height:100%;
+    overflow:auto;
+}
+.commentContain ul {
+    padding: 0;
+}
+
+.commentContain ul li {
+    padding: 0;
+}
+
+.media-list .media img {
+    width:64px;
+    height:64px;
+    border:2px solid #e5e7e8;
+    margin-right: 10px;
+}
+.media-list .media {
+    border-bottom:1px dashed #efefef;
+    margin-bottom:25px;
+}
+
 
 @media(max-width: 768px){
     .inavbar li {
@@ -166,6 +313,12 @@ figure img{
         text-align: center;
         font-size: inherit;
         display: none;
+    }
+
+    .commentContain {
+        width: 650px;
+        max-height:100%;
+        overflow:auto;
     }
     /* .inavbar:placeholder-shown {
         font-display: block;

@@ -35,7 +35,7 @@
                                         class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item"><a class="" href="howitWorks.html">How It Works</a></li>
-                            <li class="nav-item"><a class="" href="userp.html">User</a></li>
+                            <li class="nav-item"><a class="" href="admin.html">User</a></li>
                         </ul>
                         <ul class="topBotomBordersOut navbar-nav nav-r text-center">
                             <li class="nav-item"><a class="" href="sign-in.html">SignIn</a></li>
@@ -49,56 +49,28 @@
         <section class="ireport-view">
             <div class="report-single">
                 <figure>
-                    <img src="img/imgvid.jpg" alt="img">
+                    <img src="" alt="Incident img/video" id="edmedia">
                 </figure>
                 <div class="report-date">
                     <ul>
-                        <li><i class="fa fa-user"></i> Kate Bode</li>
-                        <li><i class="fa fa-calendar"></i> 20 Nov 2018</li>
-                        <li><i class="fa fa-location" href="#"></i> Geo-Location</li>
+                        <li><i class="fa fa-user" id="creatby"></i></li>
+                        <li><i class="fa fa-calendar" id="datecreated"></i></li>
+                        <li><i class="fa fa-location" href="#" id="postLocation"></i></li>
                     </ul>
                     <div class="space"></div>
                 </div>
                 <div class="view-desc">
-                    <h2>How to Write a Good iReport</h2>
-                    <p>Your report should explain the current menace being face by the cmmunity, you need to details to
-                        enable the reader and
-                        investigator understand the live experience.</p>
-                    <p>You might want to look through some tips from experts or experienced iReport delegates by going
-                        through, our previouse reports,
-                        which can often mean the difference between getting your report accepted — or rejected — by the
-                        communinities moderators.</p>
-                    <blockquote><i class="fa fa-quote-left"></i>Correct spelling, grammar and punctuation are critical.
-                        Use grammar, syntax and writing with a level of dedication that shows
-                        the situation is critical and need urgent response. Never use text-style abbreviations or rude
-                        or profane language.</blockquote>
-                    <p>The report is your megaphone — your view of the situation and your passion will determine the
-                        success of your red flag or intervention it
-                        is not just regurgitation of memorized scenarios. It needs to tell a story with passion, using
-                        personal experiences, action anecdotes that showcase your interests, your values for life,
-                        your views of the scenario and even your goal.</p>
-                    <ul> You might want to make a list here
-                        <li>Corruption</li>
-                        <li>Injustice</li>
-                        <li>Poor health</li>
-                        <li>Hunger</li>
-                    </ul>
-                    <p>Emphasize volunteer work or other ways you’ve helped people or made your community a better
-                        place. It helps if the report is related to
-                        the subject you want to bring to people's awareness. Moderators would like to know if it is not
-                        jus a pot calling the kettle black.</p>
-                    <p>Give brief description of the background of the community. Correct spelling, grammar and
-                        punctuation are
-                        critical. Never use text-style, abbreviations or rude or profane language that make your report
-                        difficult to understand or offensive to the reader.</p>
-                    <p>After the report is submited check your email to make sure you see and respond promptly to
-                        messages from the moderators.</p>
+                    <h2 id="subject"></h2>
+                    <div id="comment">
+                    </div>
                     <p>&nbsp;</p>
                     <div class="map-view">
-                        <div id=edit-button>
-                            <button>reject</button>
-                            <button>investigate</button>
-                            <button>resolve</button>
+                        <div id='edit-button'>
+                            <button id="backBtn">Back</button>
+                            <button id="delBtn">Delete</button>
+                            <button id="rejBtn" value="rejected">Reject</button>
+                            <button id="invBtn" value="investigating">Investigate</button>
+                            <button id="resBtn" value="resolved">Resolve</button>
                         </div>
                     </div>
                 </div>
@@ -113,6 +85,7 @@
             <!-- Copyright -->
 
         </footer>
+        <script type="text/javascript" src="js/editincident-ad.js"></script>
         <script type="text/javascript" src="js/change.js"></script>
 </body>
 

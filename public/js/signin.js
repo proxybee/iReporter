@@ -11,7 +11,7 @@ function submitLogin(e) {
     password: document.getElementById("password").value
   }
 
-  fetch('https://ireporterafrica.herokuapp.com/api/v1/users/signin', {
+  fetch('http://localhost:4020/api/v1/users/signin', {
     method: "POST",
     body: JSON.stringify(loginData),
     headers: {
@@ -23,7 +23,6 @@ function submitLogin(e) {
       return res.json();
     })
   .then(async (r) => {
-    console.log('hhhhhhhhhhhhhhhhhhhhhhh', r, r.users.id, r.users.email)
   if(!r.token) throw('token not recieved')
    await window.localStorage.setItem('userToken', r.token)
    await window.localStorage.setItem('id', r.users.id)

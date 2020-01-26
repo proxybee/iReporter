@@ -3,14 +3,14 @@ const basePath = "../";
 const userToken = window.localStorage.getItem("userToken");
 
 if (!userToken) {
-  window.location.href = `${basePath}/sign-in.html`;
+  window.location.href = `${basePath}sign-in.html`;
   body.style.display = "none";
   alert("You must be signed in to view Dashboard, click Ok");
 }
 
 function getIncidents() {
   // e.preventDefault()
-  fetch("https://ireporterafrica.herokuapp.com/api/v1/admin/incidents", {
+  fetch("http://localhost:4020/api/v1/admin/incidents", {
     method: "GET",
     mode: "cors",
     headers: {
@@ -22,11 +22,15 @@ function getIncidents() {
       return res.json();
     })
     .then(r => {
-      console.log("hhhhhhhhhhhhh", r);
+      console.log('hhhhhhhh', r)
+      if (r.status == '500' && r.error.name == "TokenExpiredError") {
+        localStorage.clear()
+        window.location.href = `${basePath}sign-in.html`;
+      }
       if (r.status == 204 || r.status == 400) {
         document.getElementById(
           "errormsg"
-        ).innerText = `You do not have any Incidents Yet, Create one here ${basePath}/indext.html`;
+        ).innerText = `You do not have any Incidents Yet, Create one here ${basePath}index.html`;
       }
 
       let totalIncidents = 0;
@@ -117,13 +121,13 @@ function getIncidents() {
           document.getElementById("interT").innerHTML = totalInterventions;
         });
     });
-  try{ error => {
-    console.log("error message:", error)
-  };
-}
-catch(err){
-  window.location = `${basePath}index.html`
-  console.error(err)
-}
+  try {
+    error => {
+      console.log("error message:", error);
+    };
+  } catch (err) {
+    window.location = `${basePath}index.html`;
+    console.error(err);
+  }
 }
 getIncidents();

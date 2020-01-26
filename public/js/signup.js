@@ -16,7 +16,7 @@ if (localStorage.userToken) {
     password: document.getElementById("password").value,
     
   }
-    fetch('https://ireporterafrica.herokuapp.com/api/v1/users/signup', {
+    fetch('http://localhost:4020/api/v1/users/signup', {
     method: "POST",
     body: JSON.stringify(signUpData),
     headers: {
@@ -28,7 +28,7 @@ if (localStorage.userToken) {
       return res.json();
     })
   .then((r) => {
-    if(r.token) window.location.href = `${basePath}/sign-in.html`
+    if(r.token) window.location.href = `${basePath}sign-in.html`
     else {
     let newParagraph = document.createElement("p")
     let  textNode = document.createTextNode("An error occurred while trying to register you")

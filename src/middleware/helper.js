@@ -22,6 +22,7 @@ const Helper = {
     }, process.env.JWT_SECRET, { expiresIn: '5d' });
     return token;
   },
+
   validateIncident(incident) {
     const schema = {
       username: Joi.string().min(5).required(),

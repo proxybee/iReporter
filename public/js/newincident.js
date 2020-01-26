@@ -10,7 +10,7 @@ const reportForm = document.getElementById('ireport-form')
     else {
         reportForm.style.display = 'none';
         briefButton.style.display = 'block';
-        briefButton.addEventListener('click', () => {window.location.href = `${basePath}/sign-in.html`});
+        briefButton.addEventListener('click', () => {window.location.href = `${basePath}sign-in.html`});
         }
         
  function newIncident(e) {
@@ -37,14 +37,16 @@ const reportForm = document.getElementById('ireport-form')
    // 'credentials': "same-origin"
    })
   .then((res) => {
-    console.log('hhhhhhhhhhhhhhhhhhhhh', res)
     return res.json();
     })
   .then((r) => {
-    console.log('hhhhhhhhhhhh', r)
+    if (r.error.name == "TokenExpiredError") {
+      localStorage.clear()
+      window.location.href = `${basePath}sign-in.html`;
+    }
     if(r.status == 201) {
         alert('Your iReport report has been posted')
-        window.location.href = `${basePath}/userp.html`
+        window.location.href = `${basePath}userp.html`
   }
     else {
     document.getElementById('created').innerText = "An error occurred while trying to post incident"; 

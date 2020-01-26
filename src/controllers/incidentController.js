@@ -76,7 +76,6 @@ const Incidents = {
     const getAQuery = "SELECT * FROM incidents WHERE id = $1";
     try {
       const { rows } = await db.query(getAQuery, [req.params.id]);
-      console.log("hoooooooooooooooooool", rows);
       if (!rows[0]) {
         return res.status(404).send({ message: "incident not found" });
       }
@@ -170,14 +169,14 @@ const Incidents = {
   },
 
   async updateStatus(req, res) {
-    const { error } = Helper.validateUpdateStatus(req.body);
-    if (error) {
-      res.status(400).send({ message: error.details[0].message });
-      return;
-    }
+    // const { error } = Helper.validateUpdateStatus(req.body);
+    // if (error) {
+    //   res.status(400).send({ message: error.details[0].message });
+    //   return;
+    // }
     const getQuery = "SELECT * FROM incidents WHERE id=$1";
     const statusUpdate = `UPDATE incidents
-          SET status=$1 where id=$2 AND status='pending OR investigating' returning *`;
+          SET status=$1 where id=$2 returning *`;
     try {
       const { rows } = await db.query(getQuery, [req.params.id]);
       if (!rows[0]) {
@@ -188,14 +187,12 @@ const Incidents = {
         res.status(400).send({ message: "This incident has been closed" });
         return;
       }
-      const values = [req.body.status, req.params.id];
-      const response = await db.query(statusUpdate, values);
-      res
-        .status(200)
-        .send({
-          status: 200,
-          message: "Incident has been successfully updated"
-        });
+      const values = [
+        req.body.status,
+         req.params.id
+        ];
+        const result = await db.query(statusUpdate, values);
+        return res.status(200).send(result.rows[0]);     
     } catch (err) {
       console.log("hhhhhhhhhhhhhh", err);
       res.status(400).send(err);
