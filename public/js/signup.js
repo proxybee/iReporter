@@ -16,7 +16,7 @@ if (localStorage.userToken) {
     password: document.getElementById("password").value,
     
   }
-    fetch('http://localhost:4020/api/v1/users/signup', {
+    fetch('https://ireporterafrica.herokuapp.com/api/v1/users/signup', {
     method: "POST",
     body: JSON.stringify(signUpData),
     headers: {

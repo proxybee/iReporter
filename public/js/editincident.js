@@ -63,9 +63,8 @@ function updateComment(e) {
    video: document.getElementById('vidim').value,
    location: document.getElementById("result").placeholder
  }
- console.log('hhhhhhhhhhhh', commentUp)
  
-   fetch(`http://localhost:4020/api/v1/incidents/comment/${id}`, {
+   fetch(`https://ireporterafrica.herokuapp.com/api/v1/incidents/comment/${id}`, {
    method: "PATCH",
    body: JSON.stringify(commentUp),
    mode: 'cors',

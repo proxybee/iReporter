@@ -10,7 +10,7 @@ if (!userToken) {
 
 function getIncidents() {
   // e.preventDefault()
-  fetch("http://localhost:4020/api/v1/admin/incidents", {
+  fetch("https://ireporterafrica.herokuapp.com/api/v1/admin/incidents", {
     method: "GET",
     mode: "cors",
     headers: {
@@ -51,7 +51,6 @@ function getIncidents() {
       r.rows
         .sort((d1, d2) => d1.id - d2.id)
         .forEach((incident, i) => {
-          console.log("rrrrrrrrrrrrr", incident);
           ++totalIncidents;
           // Check for the incident type, whether redFlag or intervention
 

@@ -11,7 +11,7 @@ function submitLogin(e) {
     password: document.getElementById("password").value
   }
 
-  fetch('http://localhost:4020/api/v1/users/signin', {
+  fetch('https://ireporterafrica.herokuapp.com/api/v1/users/signin', {
     method: "POST",
     body: JSON.stringify(loginData),
     headers: {
