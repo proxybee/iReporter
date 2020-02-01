@@ -116,7 +116,7 @@ html {
     color:red;
 }
 
-@media (max-width: 700px){
+@media (max-width: 770px){
 /* .navbar-collapse {
     padding-left: 15px;
     padding-right: 15px;
@@ -135,6 +135,11 @@ li.nav-item.active {
 }
 .navbar-nav {
     max-width: 80%;
+
+}
+.nav-con {
+    width: 70%;
+    align-items: right;
 }
 .nav-item a {
     padding: 0 0 0 10px !important;

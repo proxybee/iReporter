@@ -145,12 +145,10 @@ const Incidents = {
         return res.status(404).send({ message: "Incident not found" });
       }
       if (rows[0].status === "rejected" || rows[0].status === "resolved") {
-        return res
-          .status(400)
-          .send({
-            message:
-              "The incident have been resolved or rejected. Create a new incident"
-          });
+        return res.status(400).send({
+          message:
+            "The incident have been resolved or rejected. Create a new incident"
+        });
       }
       const newComment = [
         req.body.comment || rows[0].comment,
@@ -187,12 +185,9 @@ const Incidents = {
         res.status(400).send({ message: "This incident has been closed" });
         return;
       }
-      const values = [
-        req.body.status,
-         req.params.id
-        ];
-        const result = await db.query(statusUpdate, values);
-        return res.status(200).send(result.rows[0]);     
+      const values = [req.body.status, req.params.id];
+      const result = await db.query(statusUpdate, values);
+      return res.status(200).send(result.rows[0]);
     } catch (err) {
       console.log("hhhhhhhhhhhhhh", err);
       res.status(400).send(err);

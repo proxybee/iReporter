@@ -1,8 +1,9 @@
 [![Build Status](https://travis-ci.org/proxybee/iReporter.svg?branch=develop)](https://travis-ci.org/proxybee/iReporter)
 [![Coverage Status](https://coveralls.io/repos/github/proxybee/iReporter/badge.svg?branch=develop)](https://coveralls.io/repos/github/proxybee/iReporter/badge.svg?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/fcf4220d15a85451b773/maintainability)](https://codeclimate.com/github/proxybee/iReporter/maintainability)
 
 # iReporter
-iReporter is an Andela  project. It is a product which if effectively utilized is anticipated to curb the current  menace and viral spread of corruption in African countries, which has been a huge bane to her growth.
+iReporter is an Whistleblower project. It is a product which if effectively utilized is anticipated to curb the current  menace and viral spread of corruption in African countries, which has been a huge bane to her growth.
 
 
 This project is managed by the use of pivortal tracker, you can view iReport project management plan <a href="https://www.pivotaltracker.com/n/projects/2226594">here</a>
