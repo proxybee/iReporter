@@ -39,12 +39,14 @@ The site is very easy to naviagte and update if and when the need arises, below 
 ### API Endpoints
 https://ireporterafrica.herokuapp.com/
     
-GET =>		/api/v1/red-flags 				-(get all red flags)
-GET =>		/api/v1/red-flags/:id 			-(get a specific redFlag using its id)
-POST =>		/api/v1/red-flags 				-(post an id to the database)
-PATCH => 	/api/v1/red-flags/:id/location 	-(to edit location, ensure to check the conditions)
-PATCH =>	/api/v1/red-flags/:id/comment 	-(edit comment on a post)
-DELET =>	/api/v1/red-flags/:id/delete	-(delete a redFlag)
+|End Point                                  | Functionalities                                   |
+| ----------------------------------------- |:-------------------------------------------------:|
+|GET/api/v1/red-flags 				        |-(get all red flags)
+|GET/api/v1/red-flags/:id 			        |-(get a specific redFlag using its id)
+|POST/api/v1/red-flags 				        |-(post an id to the database)
+|PATCH/api/v1/red-flags/:id/location 	    |-(to edit location, ensure to check the conditions)
+|PATCH/api/v1/red-flags/:id/comment 	    |-(edit comment on a post)
+|DELET/api/v1/red-flags/:id/delete	        |-(delete a redFlag)
 
 <br>
 
