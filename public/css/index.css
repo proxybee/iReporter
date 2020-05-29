@@ -66,7 +66,7 @@ html {
     color: #FFF;
     text-decoration: none;
     font: 20px Century Gothic;
-    padding: 10px;
+    padding: 0 10px;
     text-align: center;
     z-index: 0;
     white-space: nowrap;
@@ -78,7 +78,7 @@ html {
 .topBotomBordersOut a:before, .topBotomBordersOut a:after {
     position: absolute;
     left: 0px;
-    width: 100%;
+    /* width: 100%; */
     height: 2px;
     background: #FFF;
     content:"";
@@ -101,15 +101,11 @@ html {
 
 #ilogo{
     float: left;
-    height: 85px;
     margin-right: 100px;
-    max-width: 80px;
-    margin-bottom: -5px;
     color: #fdfdf4;
-    position: fixed;
     font-size: 1.5em !important;
     font-weight: 600;
-    font: Century Gothic, Georgia, sans-serif
+    font: Century Gothic, Georgia, sans-serif;
 }
 
 #ilogo::first-letter{
@@ -117,12 +113,6 @@ html {
 }
 
 @media (max-width: 770px){
-/* .navbar-collapse {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: -15px;
-    margin-right: -15px;
-} */
 #ilogo{
     position: inherit;
 }
@@ -131,19 +121,40 @@ html {
     right: auto;
 }
 li.nav-item.active {
-    color: rgba(72, 56, 205, 0.85);
+    color: rgba(221, 220, 238, 0.85);
 }
 .navbar-nav {
-    max-width: 80%;
+    max-width: 100%;
+    padding-right: 0px !important;
 
 }
-.nav-con {
-    width: 70%;
-    align-items: right;
+.nav-r {
+    padding-left: 0 !important;
 }
 .nav-item a {
     padding: 0 0 0 10px !important;
 }
+.navbar-toggler {
+    position: absolute;
+    right: 10px;
+    /* width: 100%; */
+    z-index: 9;
+}
+    .navbar-nav{
+            background: rgba(124, 108, 216, 0.5);
+            float: right;
+            margin-top: 0;
+            padding: 0;
+            width: 95%;
+            padding: 0;
+            border-radius: 0px;
+            margin-top: 5px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
 /* .navbar>.nav-con {
     display: flex;
     justify-content: space-between;

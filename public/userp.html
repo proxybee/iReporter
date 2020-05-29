@@ -7,6 +7,9 @@
     <title>iReporter | Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- iReporter Stylsheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" media="all" href="css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -44,13 +47,13 @@
             </nav>
         </div>
         <div id="iadmin">
-            <div class="activecont">
+            <div class="activecont table-responsive">
                 <div id="homea">
                     <div class="title">
                         iReports Home
                     </div>
                     <div id=display>
-                        <table >
+                        <table  id="tablePreview" class="table table-striped table-hover table-sm table-bordered">
                             <tbody id="tsum">
                                 <h3>Total iReports</h3>
                                 <tr>
@@ -110,7 +113,7 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td><button><a href="adedit-view.html">update</a></button></td>
+                                    <td><button class="btn btn-indigo btn-sm m-0"><a href="adedit-view.html">update</a></button></td>
                                 </tr>
                             </tbody>
                         </table>
