@@ -4,8 +4,9 @@ const userToken = window.localStorage.getItem("userToken");
 
 if (!userToken) {
   window.location.href = `${basePath}sign-in.html`;
-  body.style.display = "none";
   alert("You must be signed in to view Dashboard, click Ok");
+} else {
+  body.style.display = "block";
 }
 
 function getIncidents() {

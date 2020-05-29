@@ -18,7 +18,7 @@ if (!userToken) {
 
 (previewIncident = () => {
 
-fetch(`http://localhost:4020/api/v1/incidents/${id}`, {
+fetch(`http://https://ireporterafrica.herokuapp.com/api/v1/incidents/${id}`, {
     method: 'GET',
     headers: {
         'Content-Type': 'Application/JSON',
