@@ -1,17 +1,9 @@
 const basePath = "../";
 
-const userToken = window.localStorage.getItem('userToken')
-const briefButton = document.getElementById('irepButton')
-const reportForm = document.getElementById('ireport-form')
-    if (userToken) {
-        briefButton.style.display = 'none';
-        reportForm.style.display = 'block';
-    }
-    else {
-        reportForm.style.display = 'none';
-        briefButton.style.display = 'block';
-        briefButton.addEventListener('click', () => {window.location.href = `${basePath}sign-in.html`});
-        }
+const userToken = window.localStorage.getItem("userToken");
+  if(!userToken) {
+    window.location.href = `${basePath}sign-in.html`
+  } 
         
  function newIncident(e) {
      e.preventDefault()
@@ -20,13 +12,13 @@ const reportForm = document.getElementById('ireport-form')
     type: checker,
     subject: getValue (),
     comment: commentVal (),
-    image: document.getElementById('vidim').value,
-    video: document.getElementById('vidim').value,
+    image: the_return.value,
+    video: the_return.value,
     location: document.getElementById("result").placeholder,
     
   }
-  
-    fetch('https://ireporterafrica.herokuapp.com/api/v1/incidents', {
+   
+    fetch(`https://ireporterafrica.herokuapp.com/api/v1/incidents`, {
     method: "POST",
     body: JSON.stringify(incidentData),
     mode: 'cors',
@@ -37,16 +29,20 @@ const reportForm = document.getElementById('ireport-form')
    // 'credentials': "same-origin"
    })
   .then((res) => {
+    console.log(res)
     return res.json();
     })
   .then((r) => {
-    if (r.error.name == "TokenExpiredError") {
+    if (r.error && r.error.expiredAt < Date.now()) {
       localStorage.clear()
       window.location.href = `${basePath}sign-in.html`;
-    }
+    };
+    if (r.error && r.success === false) {
+      window.location.href = `${basePath}index.html`;
+    };
     if(r.status == 201) {
         alert('Your iReport report has been posted')
-        window.location.href = `${basePath}userp.html`
+        window.location.href = `${basePath}dashboardu.html`
   }
     else {
     document.getElementById('created').innerText = "An error occurred while trying to post incident"; 
@@ -57,18 +53,36 @@ const reportForm = document.getElementById('ireport-form')
   })
 }
 
+// function resetForm() {
+//   getValue () = "";
+//   commentVal () = "";
+//   the_return.value = "",
+//   the_return.value = "",
+//   document.getElementById("result").placeholder = "",
+//   checker = false;
+// }
+
+// function incidentFormSubmit() {
+//   newIncident
+//   resetForm();
+// }
+
 document.getElementById("submitIncident").addEventListener("submit", newIncident);
 
 // Toggle between create red flag && intervene on Homepage
 const redFlag = document.getElementById('redText');
 const intervene = document.getElementById('intText');
+const redFlagh = document.getElementById('redf')
+const interveneh = document.getElementById('interv');
 const change = document.getElementById('defaultCheck1');
 const change1 = document.getElementById('defaultCheck');
-redFlag.style.display = 'none'
-intervene.style.display = 'none'
+redFlagh.style.display = 'none'
+interveneh.style.display = 'none'
+
+//console.log(redText.value, intText.value, 'fffffffffffffffffffff')
 
 commentVal = () => {
-  if ( redFlag.style.display = 'block')
+  if ( redFlagh.style.display = 'block')
   return redText.value
   else{
     return intText.value
@@ -79,16 +93,16 @@ change1.addEventListener('click', () => {
   change1.checked = true;
   change.checked = false;
   checker = change1.value
-  redFlag.style.display = 'block';
-  intervene.style.display = 'none';
+  redFlagh.style.display = 'block';
+  interveneh.style.display = 'none';
 
 });
 change.addEventListener('click', () => {
     change.checked = true;
     change1.checked = false;
     checker = change.value
-    intervene.style.display = 'block';
-    redFlag.style.display = 'none';
+    interveneh.style.display = 'block';
+    redFlagh.style.display = 'none';
 
 });
 
@@ -96,13 +110,15 @@ change.addEventListener('click', () => {
 const formControl = document.getElementById('icHolder');
 const otherSelect = document.querySelector('option[value="other"]');
 const otherText = document.getElementById("otherValue");
-otherText.style.display = 'none';
+const otherTexth = document.getElementById("otherh");
+otherTexth.style.display = 'none';
 
 formControl.addEventListener('click', () => {
   if(otherSelect.selected) {
-    otherText.style.display = 'block';
-    } else {
-      otherText.style.display = 'none';
+    otherTexth.style.display = 'block';
+    } 
+    else {
+      otherTexth.style.display = 'none';
     }
 });
 

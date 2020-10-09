@@ -305,6 +305,58 @@ figure img{
     border-bottom:1px dashed #efefef;
     margin-bottom:25px;
 }
+.customFile {
+    display: flex;
+}
+/* .input-file-container {
+    position: relative;
+    width: 100%;
+    
+  }  */
+  .input-file-trigger {
+    display: block;
+    padding: 12px 10px;
+    background: #5a39d2;
+    color: #fff;
+    font-size: 1em;
+    transition: all .4s;
+    cursor: pointer;
+  }
+   .input-file {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    opacity: 0;
+    padding: 14px 0;
+    cursor: pointer;
+    text-align: center;
+  }
+   .input-file:hover + .input-file-trigger,
+   .input-file:focus + .input-file-trigger,
+  .input-file-trigger:hover,
+  .input-file-trigger:focus {
+    background: #374655;
+    color: #cfc2f1;
+  }
+  
+  .file-return {
+    margin: 0;
+    border: #5a39d2;
+  }
+  .file-return:not(:empty) {
+    margin: 1em 0;
+  }
+   .file-return {
+    font-style: italic;
+    font-size: .9em;
+    font-weight: bold;
+  }
+  .file-return:not(:empty):before {
+    content: "Selected file: ";
+    font-style: normal;
+    font-weight: normal;
+    /* color: #414046; */
+  }
 
 
 @media(max-width: 768px){

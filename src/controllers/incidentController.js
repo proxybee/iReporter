@@ -1,12 +1,10 @@
 /* eslint-disable max-len */
-import moment from "moment";
-import uuidv4 from "uuid/v4";
-import Helper from "../middleware/helper";
 import db from "../db/db";
+import Pagination from "../middleware/pagination"
 // import Auth from '../middleware/auth';
 
 // set-up end point to create a intervention
-const Incidents = {
+const allIncidents = {
   /**
    * Get All Incidents
    * @param {object} req
@@ -14,18 +12,33 @@ const Incidents = {
    * @returns {object} incidents array
    */
   async getAllIncidents(req, res) {
-    const getAllQuery = `SELECT * FROM incidents WHERE createdBy = '${req.user.id}'`;
+    // Get current page from url (request parameter)
+    const page_id = parseInt(req.params.page),
+      currentPage = page_id === 1 ? page_id : currentPage,
+      pageUri = '/incidents/';
+    /*Get total items*/
+    const { rowCount }= await db.query(`SELECT * FROM incidents WHERE createdBy = '${req.user.id}'`)
+        // Display 10 items per page
+    const perPage = 10,
+      totalCount = rowCount;
+
+    // Instantiate Pagination class
+    const Paginate = new Pagination(totalCount, currentPage, pageUri, perPage),
+    offset = (currentPage - 1) * perPage;
+    const getAllQuery = `SELECT * FROM incidents WHERE createdBy = '${req.user.id}' ORDER BY type = 'redFlag', type = 'intervention' LIMIT '${Paginate.perPage}' OFFSET '${offset}'`;
     try {
-      // check for if there are no incidents
-      const { rows } = await db.query(getAllQuery);
-      /** if this doesn't work, review this line */
+      /*Query items*/
+      const { rows } = await db.query(getAllQuery)
       if (!rows[0]) {
         return res.status(404).send({ message: "No Incident found" });
       }
-      const { rowCount } = await db.query(getAllQuery);
-      return res.status(200).send({ rows, rowCount });
+      if (rows[0]) {
+       const pages = Paginate.links()
+        return res.status(200).send({ rows, pages, totalCount });
+      }
     } catch (error) {
-      return res.status(400).send(error);
+      return res.status(500)
+        .send({ message: "Request gone wrong", error });
     }
   },
 
@@ -42,136 +55,13 @@ const Incidents = {
       const { rowCount } = await db.query(getAllQueryAdmin);
       return res.status(200).send({ rows, rowCount });
     } catch (error) {
-      return res.status(500).send(error);
-    }
-  },
-
-  /**
-   * Get An Incident
-   * @param {object} req
-   * @param {object} res
-   * @returns {object} incident object
-   */
-  async getIncident(req, res) {
-    const getAQuery =
-      "SELECT * FROM incidents WHERE id = $1 AND createdBy = $2";
-    try {
-      const { rows } = await db.query(getAQuery, [req.params.id, req.user.id]);
-      if (!rows[0]) {
-        return res.status(404).send({ message: "incident not found" });
-      }
-      return res.status(200).send(rows[0]);
-    } catch (error) {
-      return res.status(400).send(error);
-    }
-  },
-
-  /**
-   * Get An Incident Admin
-   * @param {object} req
-   * @param {object} res
-   * @returns {object} incident object
-   */
-  async getIncidentAdm(req, res) {
-    const getAQuery = "SELECT * FROM incidents WHERE id = $1";
-    try {
-      const { rows } = await db.query(getAQuery, [req.params.id]);
-      if (!rows[0]) {
-        return res.status(404).send({ message: "incident not found" });
-      }
-      return res.status(200).send(rows[0]);
-    } catch (error) {
-      return res
-        .status(500)
-        .send({ message: "Server error, please try again", error });
-    }
-  },
-
-  /**
-   * Create An Incident
-   * @param {object} req
-   * @param {object} res
-   * @returns {object} incident object
-   */
-
-  async createIncident(req, res) {
-    const { err } = Helper.validateIncident(req.body);
-    if (err) {
-      res.status(400).send({ message: err.details[0].message });
-      return;
-    }
-    const createQuery = `INSERT INTO
-      incidents(id, createdBy, type, subject, comment, image, video, location, status, created_date, modified_date)
-      VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
-      returning *`;
-    const values = [
-      uuidv4(),
-      req.user.id,
-      // Create type
-      req.body.type,
-      // Create subject
-      req.body.subject,
-      req.body.comment,
-      req.body.image,
-      req.body.video,
-      req.body.location,
-      "pending",
-      moment(new Date()),
-      moment(new Date())
-    ];
-
-    try {
-      const { rows } = await db.query(createQuery, values);
-      return res
-        .status(201)
-        .send({ message: "incident created", incident: rows, status: 201 });
-    } catch (error) {
-      console.log(error);
-      return res.status(400).send(error);
-    }
-  },
-
-  async updateIncidentCom(req, res) {
-    const findOneQuery =
-      "SELECT * FROM incidents WHERE id=$1 AND createdBy = $2";
-    const updateOneQuery = `UPDATE incidents
-    SET comment=$1, image=$2, video=$3, location=$4, modified_date=$5 WHERE id = $6 AND createdBy = $7 returning *`;
-    try {
-      const { rows } = await db.query(findOneQuery, [
-        req.params.id,
-        req.user.id
-      ]);
-      if (!rows[0]) {
-        return res.status(404).send({ message: "Incident not found" });
-      }
-      if (rows[0].status === "rejected" || rows[0].status === "resolved") {
-        return res.status(400).send({
-          message:
-            "The incident have been resolved or rejected. Create a new incident"
-        });
-      }
-      const newComment = [
-        req.body.comment || rows[0].comment,
-        req.body.image || rows[0].image,
-        req.body.video || rows[0].video,
-        req.body.location || rows[0].location,
-        moment(new Date()),
-        req.params.id,
-        req.user.id
-      ];
-      const response = await db.query(updateOneQuery, newComment);
-      return res.status(200).send(response.rows[0]);
-    } catch (err) {
-      return res.status(400).send(err);
+      return res.status(500)
+      .send({ message: "Server error, please try again", error })
+      .redirect("/");
     }
   },
 
   async updateStatus(req, res) {
-    // const { error } = Helper.validateUpdateStatus(req.body);
-    // if (error) {
-    //   res.status(400).send({ message: error.details[0].message });
-    //   return;
-    // }
     const getQuery = "SELECT * FROM incidents WHERE id=$1";
     const statusUpdate = `UPDATE incidents
           SET status=$1 where id=$2 returning *`;
@@ -187,9 +77,9 @@ const Incidents = {
       }
       const values = [req.body.status, req.params.id];
       const result = await db.query(statusUpdate, values);
+      console.log (res)
       return res.status(200).send(result.rows[0]);
     } catch (err) {
-      console.log("hhhhhhhhhhhhhh", err);
       res.status(400).send(err);
     }
   },
@@ -213,4 +103,4 @@ const Incidents = {
   }
 };
 
-export default Incidents;
+export default allIncidents;

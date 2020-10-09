@@ -3,7 +3,11 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/fcf4220d15a85451b773/maintainability)](https://codeclimate.com/github/proxybee/iReporter/maintainability)
 
 # iReporter
-iReporter is an Whistleblower project. It is a product which if effectively utilized is anticipated to curb the current  menace and viral spread of corruption in African countries, which has been a huge bane to her growth.
+iReporter is a platform anonymous reporting platform where experienced/witnessed corrupt, theft, bullying, unethical and unjust practices in any cooperate organization or government body can be reported, to bring the attention of an organization's management and the general public to situations, incidents or existing hazardous condition that may require urgent intervention.
+Ensure to submit a report whenever you witness any, your report will be investigated and Intermediated, concerned management team and governing body will be notified as appropriate.
+
+This is to solve the problem of oversight by organizations and governing bodies.
+
 
 
 This project is managed by the use of pivortal tracker, you can view iReport project management plan <a href="https://www.pivotaltracker.com/n/projects/2226594">here</a>
@@ -32,7 +36,7 @@ The site is very easy to naviagte and update if and when the need arises, below 
     $ npm run start
     ```
 
-2. Navigate to your browser and type in: http://localhost:3020
+2. Navigate to your browser and type in: http://localhost:4020
 
 <br>
 

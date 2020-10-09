@@ -17,8 +17,9 @@ if (!userToken) {
 }
 
 (previewIncident = () => {
+  //http://https://ireporterafrica.herokuapp.com
 
-fetch(`http://https://ireporterafrica.herokuapp.com/api/v1/incidents/${id}`, {
+fetch(`http://localhost:4020/api/v1/incident/${id}`, {
     method: 'GET',
     headers: {
         'Content-Type': 'Application/JSON',
@@ -29,12 +30,15 @@ fetch(`http://https://ireporterafrica.herokuapp.com/api/v1/incidents/${id}`, {
     return res.json();
   })
   .then((data) => {
-    if (r.status == '500' && data.error.name == "TokenExpiredError") {
+    if (data.error && data.error.expiredAt < Date.now()) {
       localStorage.clear()
       window.location.href = `${basePath}sign-in.html`;
-    }
+    };
+    if (data.error && data.success === false) {
+      window.location.href = `${basePath}index.html`;
+    };
     const date = data.created_date
-    toString = date.toLocaleString('en-GB');
+    toString = date.slice(0,10);
     document.getElementById('edmedia').innerHTML = data.image || data.video;
     document.getElementById('creatby').innerHTML = data.createdby;
     document.getElementById('datecreated').innerHTML = toString;
@@ -46,12 +50,13 @@ fetch(`http://https://ireporterafrica.herokuapp.com/api/v1/incidents/${id}`, {
 })();
 
 const container = document.getElementById('postContainer')
-edit.addEventListener('click', () => { 
+edit.addEventListener('click', (e) => { 
+      e.preventDefault()
       container.style.display = 'block';  
 })
 
 if (back) {
-    back.addEventListener('click', () => { window.location.href = `${basePath}userp.html` });
+    back.addEventListener('click', () => { window.location.href = `${basePath}dashboardu.html` });
 }
 
 function updateComment(e) {
@@ -59,8 +64,8 @@ function updateComment(e) {
 
  const commentUp = {
    comment: document.getElementById('newcom').value,
-   image: document.getElementById('vidim').value,
-   video: document.getElementById('vidim').value,
+   image: the_return.value,
+   video: the_return.value,
    location: document.getElementById("result").placeholder
  }
  
@@ -77,13 +82,20 @@ function updateComment(e) {
    return res.json();
    })
  .then((r) => {
+  if (r.error && r.error.expiredAt < Date.now()) {
+    localStorage.clear()
+    window.location.href = `${basePath}sign-in.html`;
+  };
+  if (r.error && r.success === false) {
+    window.location.href = `${basePath}index.html`;
+  };
    if(r.status == 201) {
     container.style.display = 'none';
-    // document.getElementById('edmedia').innerHTML = r.image || r.video;
-    // document.getElementById('reporter').innerHTML = r.createdby;
-    // document.getElementById('modDate').innerHTML = r.modified_date;
-    // document.getElementById('postLocation').innerHTML = r.location;
-    // document.getElementById('comment').innerHTML = r.comment;
+    document.getElementById('edmedia').innerHTML = r.image || r.video;
+    document.getElementById('reporter').innerHTML = r.createdby;
+    document.getElementById('modDate').innerHTML = r.modified_date;
+    document.getElementById('postLocation').innerHTML = r.location;
+    document.getElementById('comment').innerHTML = r.comment;
    
  }
    else {

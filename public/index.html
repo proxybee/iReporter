@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -29,9 +31,9 @@
                   <!-- <div class="clearfix"></div> -->
                   <div class="navbar-collapse collapse" id="collapsingNavbar2">
                   <ul class="topBotomBordersOut navbar-nav text-center col-md-5">
-                    <li class="nav-item active"><a href="index.html">iReport<span class="sr-only">(current)</span></a></li>
-                    <li class="nav-item"><a class="" href="howitWorks.html">How It Works</a></li>
-                     <li class="nav-item" id="userLink"><a class="" href="userp.html">User</a></li>
+                    <li class="nav-item active"><a href="addNew.html">iReport<span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a href="howitWorks.html">How It Works</a></li>
+                    <li class="nav-item"><a href="contact.html">Contact</a></li>
                   </ul>
                   <ul class="topBotomBordersOut navbar-nav nav-r text-center col-md-4">
                     <li class="nav-item"><a class="" href="sign-in.html">SignIn</a></li>
@@ -44,53 +46,17 @@
                 <div class="clear">
                   <div class="ibrief" class="col-md-6 col-sm-12 left">
                         <h1>Welcome To iReporter</h1>
-                        <p>iReporter is a platform where you can forward experienced/witnessed corrupt and unjust acts
-                            especially by
-                            the Government, you can also bring our attention to situations that needs urgent intervention.
-                            Ensure to submit a report whenever you witness any, we will investigate and Intervene as
-                            appropriate
+                        <p>iReporter is a platform where you can anonymously forward experienced/witnessed corrupt, theft, bullying, unethical and unjust acts 
+                            in any cooperate organization or government body, you can also bring the attention of your organization's management and the general public
+                             to situations that require urgent intervention.
+                            Ensure to submit a report whenever you witness any, we will investigate and Intermediate as
+                            appropriate and notify your management team. Note we only investigate legit cases.
                         </p>
-                        <button type="button" id="irepButton">iReport Here</button>
                     </div>
                     <div class="iform" class="col-md-6 col-sm-12 right" id="ireport-form">
-                      <div class="iform-1">
+                      <div>
                         <div >
-                          <form autocomplete="off" method="POST" id="submitIncident" autocomplete="off">
-                            <h3>iReport</h3>
-                            <h6>Select Incident Type</h6>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" value="redFlag" id="defaultCheck" id="rad"/>
-                              <label class="form-check-label" for="defaultCheck">
-                                Red Flag
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" value="intervention" id="defaultCheck1" id="rad1"/>
-                              <label class="form-check-label" for="defaultCheck1">
-                                Intervention
-                              </label>
-                            </div>
-                            <div type="selection" class="icHolder">
-                              <select class="form-control" class="icSelector" id="icHolder">
-                                <option >Select Subject</option>
-                                <option value="badRoad">Bad Road</option>
-                                <option value="CollapsedBrigdge">Collapsed Bridge</option>
-                                <option value="Flooding">Flooded Area</option>
-                                <option value="healthHazard">Health Hazard</option>
-                                <option value="other">Other (Please State)</option>
-                              </select>
-                            </div>
-                              <input type="textarea" placeholder="Enter other" id="otherValue">
-                              <input type="textarea" placeholder="State Intervention" id="intText">
-                              <input type="textarea" placeholder="Enter Red Flag" id="redText">
-                              <input id="result" id="location" onclick="showPosition();" value = "" type="Cordinates" placeholder="input Geolocation">
-                            <!-- enable to upload and post on submit -->
-                              <input type="file" accept="video/*,image/*" placeholder="Click field to upload Video Or image" id="vidim"
-                              size="40">
-                            <p id="created"></p>
-                            <button>Intervene</button>
-                            <p id="change1"><a href="sign-in.html">SignIn to Post Incident</a></p>
-                          </form>
+                          <img src="img/background1.jpg" style="width:100%; height: 58vh;"></img>
                         </div>
                       </div>
                     </div>
@@ -99,16 +65,54 @@
            </div>
         </header>
     </div>
-    <footer class="page-footer font-small special-color-grey justify-content-center">
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="index.html">Bitech Solutions</a>
+    <footer class="report-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+            <div class="block-7">
+              <h3 class="footer-heading mb-4">About Us</h3>
+              <p>iReporter is a platform where you can anonymously forward experienced/witnessed corrupt, theft, bullying, unethical and unjust acts 
+                in any cooperate organization or government body.</p>
+            </div>
+
+          </div>
+          <div class="col-lg-3 mx-auto mb-5 mb-lg-0 text-center">
+            <h3 class="footer-heading mb-4">Quick Links</h3>
+            <ul class="list-unstyled">
+              <li><a href="addNew.html">iReport</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="sign-in.html">SignIn</a></li>
+              <li><a href="sign-up.html">SignUp</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-3 ">
+            <div class="addBlock mb-5">
+              <h3 class="footer-heading mb-4">Contact Info</h3>
+              <ul class="list-unstyled">
+                <li class="address"><i class="fa fa-address-card-o" aria-hidden="true"></i> Fake St. Victoria Island, Lagos</li>
+                    &nbsp;
+                <li class="phone"><i class="fa fa-phone" aria-hidden="true"></i> 080 392 3929 210</li>
+                    &nbsp;
+                <li class="email"><i class="fa fa-envelope-o" aria-hidden="true"></i> emailaddress@ireporter.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4 text-center">
+          <div class="col-md-12">
+            <p>
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved </i> by <a href="" target="_blank"
+                class="text-primary">iReporter Inc</a>
+            </p>
+          </div>
+        </div>
       </div>
-      <!-- Copyright -->
     </footer>
-    <script type="text/javascript" src="js/newincident.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- https://getbootstrap.com/ -->
     <script type="text/javascript" src="js/list.js"></script>
-    <script type="text/javascript" src="js/location.js"></script>
 </body>
 
 </html>

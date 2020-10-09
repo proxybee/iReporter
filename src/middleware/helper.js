@@ -2,6 +2,7 @@
 import Joi from 'joi';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { Console } from 'winston/lib/winston/transports';
 
 const Helper = {
 
@@ -19,11 +20,10 @@ const Helper = {
   generateToken(id) {
     const token = jwt.sign({
       userId: id,
-    }, process.env.JWT_SECRET, { expiresIn: '5d' });
+    }, process.env.JWT_SECRET, { expiresIn: '3d' });
     return token;
   },
-
-  validateIncident(incident) {
+    validateIncident(incident) {
     const schema = {
       username: Joi.string().min(5).required(),
       type: Joi.any().valid(['Red Flag', 'Intervention']).required(),

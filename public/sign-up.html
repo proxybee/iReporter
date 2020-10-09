@@ -9,11 +9,13 @@
     <!-- iReporter Stylsheet -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/index.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/sign-in.css" />
+    
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
 <body>
@@ -28,42 +30,43 @@
                           <button class="navbar-toggler pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar2" aria-controls="collapsingNavbar2" aria-expanded="true" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                           </button>
-                          <!-- <div class="clearfix"></div> -->
-                          <div class="navbar-collapse collapse" id="collapsingNavbar2">
-                          <ul class="topBotomBordersOut navbar-nav text-center col-md-5">
-                            <li class="nav-item active"><a href="index.html">iReport</a></li>
-                            <li class="nav-item"><a class="" href="howitWorks.html">How It Works</a></li>
-                             <li class="nav-item"><a class="" href="userp.html">User</a></li>
-                          </ul>
-                          <ul class="topBotomBordersOut navbar-nav nav-r text-center col-md-4">
-                            <li class="nav-item"><a class="" href="sign-in.html">SignIn</a></li>
-                            <li class="nav-item"><a class="" href="sign-up.html">SignUp<span class="sr-only">(current)</span></a></li>
-                          </ul>
-                        </div>
                       </div>
                       </nav>
                 </div>
                 <div class="row">
-                    <div class="siform">
-                        <div class="siform-1">
+                    <div class="siform col-md-4 col-sm-12">
+                        <div class="siform-1 bg-white tm-block">
                             <form method="POST" id="signUpForm" autocomplete="off">
                                 <p id="msg"></p>
-                                <h3>Sign Up</h3>
-                                <input type="text" placeholder="first name" id="firstname" required />
-                                <input type="text" placeholder="last name" id="lastname" required />
-                                <input type="text" placeholder="user name" id="username" required />
-                                <input type="email" placeholder="email id" id="email" required />
-                                <input type="number" placeholder="mobile" id="phone_number" minlength="7" maxlength="14" />
-                                <input type="password" placeholder="password" id="password" required autocomplete=""/>
-                                <button>Sign Up</button>
+                                <h2 >Sign Up</h2>
+                                <div class="form-group row col-md-12">
+                                <input class = "form-control" type="text" placeholder="first name" id="firstname" required />
+                                </div>
+                                <div class="form-group row col-md-12">
+                                <input class = "form-control" type="text" placeholder="last name" id="lastname" required />
+                                </div>
+                                <div class="form-group row col-md-12">
+                                <input class = "form-control" type="text" placeholder="user name" id="username" required />
+                                </div>
+                                <div class="form-group row col-md-12">
+                                <input class = "form-control" type="email" placeholder="email id" id="email" required />
+                                </div>
+                                <div class="form-group row col-md-12">
+                                <input class = "form-control" type="number" placeholder="mobile" id="phone_number" minlength="7" maxlength="14" />
+                                </div>
+                                <div class="form-group row col-md-12">
+                                <input class = "form-control" type="password" placeholder="password" id="password" required autocomplete=""/>
+                                </div>
+                                <button class="btn btn-primary btn-lg btn-block">Sign Up</button>
                                 <p>Already an iReporter?<a href="sign-in.html">Sign In here</a></p>
                             </form>
                         </div>
                     </div>
                 </div>
         </div>
+    </header>
     </div>
-    <footer class="page-footer font-small special-color-grey justify-content-center">
+    <footer class="page-footer font-small justify-content-center">
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2018 Copyright:
@@ -73,6 +76,8 @@
 
     </footer>
     <!--iReport Javascript-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- https://getbootstrap.com/ -->
     <script type="text/javascript" src="js/signup.js"></script>
     <script type="text/javascript" src="js/list.js"></script>
 </body>

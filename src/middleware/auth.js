@@ -6,12 +6,14 @@ const Auth = {
      * Verify Token */
   async verifyToken(req, res, next) {
     const token = req.headers['x-access-token'];
+    // const options = { expiresIn: '3d' };
 
-    if (!token) {
-      return res.status(400).send({ message: 'Token is not provided' });
-    }
+    if (token) {
+      const options = { expiresIn: '3d' };
+      // return res.status(400).send({ message: 'Token is not provided' });
+    
     try {
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const decoded = jwt.verify(token, process.env.JWT_SECRET, options);
       const text = 'SELECT * FROM users WHERE id = $1';
       const { rows } = await db.query(text, [decoded.userId]);
       if (rows[0] < 0) {
@@ -20,12 +22,21 @@ const Auth = {
       req.user = { id: decoded.userId };
       next();
     } catch (error) {
-      return res.status(500).send({
+      return res.status(500)
+      .send({
         error,
         success: false,
         message: 'something went wrong please try again'
       });
     }
+  }
+  else {
+    decoded = { 
+      error: `Authentication error. A Valid Token required.`,
+      status: 401
+    };
+    res.status(401).send(decoded);
+  }
   },
 
   async checkUser(req, res, next) {

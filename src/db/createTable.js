@@ -36,9 +36,19 @@ import db from './db';
       created_date TIMESTAMP,
       modified_date TIMESTAMP
       )`;
+      const contact = `CREATE TABLE IF NOT EXISTS contacts(
+        id UUID PRIMARY KEY,
+        firstname VARCHAR NOT NULL,
+        lastname VARCHAR NOT NULL,
+        email VARCHAR NOT NULL,
+        subject VARCHAR NOT NULL,
+        message VARCHAR NOT NULL,
+        created_date TIMESTAMP
+        )`;
 
     await db.query(userTable);
     await db.query(incidentTable);
+    await db.query(contact);
     console.log('Created user and Incident table');
   }
 })();

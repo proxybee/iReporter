@@ -59,11 +59,11 @@ ul {
 }
 
 .iform {
-  width: 30%;
-  padding: 10% 0 0;
+  width: 100%;
+  /* padding: 10% 0 0; */
   margin-right: 100px;
   min-height: 200px;
-  float: right;
+  /* float: right; */
 }
 
 .postcomments {
@@ -297,7 +297,7 @@ tfoot {
     resize: auto;
 }
 
-.tdedit td:nth-child(3){
+.tdedit td:nth-child(2){
   max-width: 200px !important;
 }
 

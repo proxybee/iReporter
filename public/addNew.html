@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accounts Page - Dashboard Template</title>
+    <!--
+
+    Template 2108 Dashboard
+
+	http://www.ireporter.com/view/2108-dashboard
+
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+    <!-- https://fonts.google.com/specimen/Open+Sans -->
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- https://getbootstrap.com/ -->
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <link rel="stylesheet" href="css/main-admin.css">
+    
+</head>
+
+<body class="bg02">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-xl navbar-light bg-light">
+                    <a class="navbar-brand" href="./index.html">
+                        <i class="fas fa-3x fa-adjust tm-site-icon"></i>
+                        <h1 class="mb-0">iReporter</h1>
+                    </a>
+                    <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="dashboardu.html">Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="dashboardu.html#incidentT">Intervention</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="dashboardu.html#redFlagT">Red Flag</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="addNew.html">Send Report
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="account.html">Accounts</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link d-flex" href="sign-in.html">
+                                    <i class="far fa-user mr-2 tm-logout-icon"></i>
+                                    <span id="logout">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row tm-content-row tm-mt-big" >
+            <div class="tm-col tm-col-big">
+                <div class="bg-white tm-block">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="tm-block-title" style="text-align: center;">Enter iReport</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="iform" class="col-md-6 col-sm-12 right" id="ireport-form">
+                                <div class="iform-1">
+                                  <div >
+                                    <form autocomplete="off" method="POST" id="submitIncident" autocomplete="off">
+                                      <h6 style="text-align: center; font-weight: 600;">Select Incident Type</h6>
+                                      <div class="form-check form-group">
+                                        <input class="form-check-input" type="radio" value="redFlag" id="defaultCheck" id="rad"/>
+                                        <label class="form-check-label" for="defaultCheck">
+                                          Red Flag
+                                        </label>
+                                      </div>
+                                      <div class="form-check form-group">
+                                        <input class="form-check-input" type="radio" value="intervention" id="defaultCheck1" id="rad1"/>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                          Intervention
+                                        </label>
+                                      </div>
+                                      <div type="selection" class="icHolder form-group">
+                                        <labe for="name" class="mb-3">
+                                          Category
+                                          </label>
+                                        <select class="form-control1" class="icSelector" id="icHolder">
+                                          <option>Select Category</option>
+                                          <option value="badRoad">Bad Road</option>
+                                          <option value="CollapsedBrigdge">Collapsed Bridge</option>
+                                          <option value="Flooding">Flooded Area</option>
+                                          <option value="healthHazard">Health Hazard</option>
+                                          <option value="other">Other (Please State)</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group" id="otherh">
+                                        <label for="name">Other Subject</label>
+                                        <input placeholder="Enter Other" type="text" class="form-control validate" id="otherValue">
+                                    </div>
+                                    <div class="form-group" id ="interv">
+                                        <label for="name">Intervention</label>
+                                        <textarea placeholder="State Intervention" rows= "3" cols ="20" class="form-control validate" id="intText"></textarea>
+                                    </div>
+                                    <div class="form-group" id="redf">
+                                        <label for="name">Red Flag</label>
+                                        <textarea placeholder="State Red Flag" rows= "3" cols ="20" class="form-control validate" id="redText"></textarea>
+                                    </div>
+                                        <div class="form-group">
+                                            <label for="name">Location</label>
+                                        <input id="result" id="location" onclick="showPosition();" value = "" type="Cordinates" placeholder="input Geolocation" class="form-control">
+                                        </div>
+                                      <!-- enable to upload and post on submit -->
+                                      
+                                      <div class="form-group customFile">
+                                        <label for="name">Upload Media</label>
+                                        <div class="input-file-container">  
+                                            <input class="input-file" id="my-file" type="file">
+                                            <label tabindex="0" for="my-file" class="input-file-trigger" style="text-align: center;">Select media file...</label>
+                                        </div>
+                                          <p id="vidim" class="file-return"></p>
+                                        </div>
+                                      <p id="created"></p>
+                                      <button>Intervene</button>
+                                      <p id="change1" style="text-align: center;"><a href="sign-in.html">SignIn to Post Incident</a></p>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="row tm-mt-small">
+            <div class="col-12 font-weight-light">
+                <p class="d-inline-block tm-bg-black text-white py-2 px-4">
+                    Copyright &copy; 2018
+                    <a rel="nofollow" href="https://www.ireporter.com" class="text-white tm-footer-link">ireporter</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- https://jquery.com/download/ -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- https://getbootstrap.com/ -->
+    <script src="js/filepath.js"></script>
+    <script type="text/javascript" src="js/location.js"></script>
+    <script type="text/javascript" src="js/newincident.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 .hiw-container {
     padding: 10%;
+   align-items: center;
 }
 /* .how-section1 h4{
     color: #ffa500;
@@ -17,9 +18,24 @@
 .how-img 
 {
     text-align: center;
+    width: 40%;
+    margin: auto ;
 }
 .how-img img{
     width: 25%;
+}
+
+@media screen and (min-width: 600px) and (max-width: 780px) {
+
+    .how-img img{
+        width: 70%;
+    }
+
+}
+@media screen and (max-width: 780px) {
+.how-img {
+    text-align: center;
+}
 }
 
 .how-text {
@@ -28,8 +44,14 @@
     font-size: 16px;
 }
 
-@media (max-width: 780px){
+/* @media (max-width: 780px){
     .how-img img{
         width: 40%;
     }
+} */
+
+.col-md-6 h4 {
+    color: white;
+    font-weight: 600;
 }
+

@@ -45,7 +45,7 @@ const User = {
           .send({ message: "User with that EMAIL already exist" });
       }
       return res
-        .status(400)
+        .status(500)
         .send({ message: "error occured while trying to create user", error });
     }
   },
@@ -77,16 +77,18 @@ const User = {
               "Your email or password is incorrect, rectify and try again"
           });
       }
+      console.log(rows[0].isadmin)
       const token = Helper.generateToken(rows[0].id);
+      const id = (rows[0].id);
       res
         .status(200)
         .send({
+          id,
           token,
           message: "You have successfully logged in",
-          users: rows[0]
         });
     } catch (error) {
-      res.status(400).send({ message: error });
+      res.status(500).send({ message: error });
     }
   },
   /**

@@ -1,17 +1,32 @@
 const basePath = "../";
+let loader = document.querySelector('.loading'),
+container = document.querySelector('#home')
+incidentData = document.querySelector("#tableBody").innerHTML,
+redFlagData = document.querySelector("#tableBodyOne").innerHTML
+//page = document.querySelector('.page-link').value
+const paginationBlock = document.querySelector(".pagination-block")
+const getUrl = window.location.href;
+const url = new URL(getUrl);
+const pageNum = url.searchParams.get('page-link');
+const page =  pageNum > 1 ? url.searchParams.get('page-link') : 1;
+
+
 
 const userToken = window.localStorage.getItem("userToken");
+const getUserToken = setTimeout(() => {
+  if(!userToken || userToken === undefined) {
+    window.location.href = `${basePath}sign-in.html`
+  } else
+ // window.open(`${basePath}sign-in.html`, '_self')
+ container.style.display = 'block';
+ loader.style.display = 'none';
+  // return userToken
+}, 3000)
 
-if (!userToken) {
-  window.location.href = `${basePath}sign-in.html`;
-  alert("You must be signed in to view Dashboard, click Ok");
-} else {
-  body.style.display = "block";
-}
 
 function getIncidents() {
   // e.preventDefault()
-  fetch('https://ireporterafrica.herokuapp.com/api/v1/incidents', {
+  return fetch(`https://ireporterafrica.herokuapp.com/api/v1/incidents/${page}`, {
     method: "GET",
     mode: "cors",
     headers: {
@@ -23,22 +38,25 @@ function getIncidents() {
       return res.json();
     })
     .then(r => {
-      if (r.status == '500' && r.error.name == "TokenExpiredError") {
-        localStorage.clear()
-        window.location.href = `${basePath}sign-in.html`;
-      };
+     // console.log(r.pages)
       if (r.status == 204 || r.status == 400) {
         document.getElementById(
           "errormsg"
         ).innerText = `You do not have any Incidents Yet, Create one here ${basePath}index.html`;
       }
-
-      let totalIncidents = 0;
+      if (r.error && r.error.expiredAt < Date.now()) {
+        localStorage.clear()
+        window.location.href = `${basePath}sign-in.html`;
+      };
+      if (r.error && r.success === false) {
+        window.location.href = `${basePath}index.html`;
+      };
       let totalredFlags = 0;
       let totalInterventions = 0;
 
       let tableR = document.getElementById("tflag");
       let tableI = document.getElementById("tflagi");
+      paginationBlock.innerHTML = r.pages;
       // let tbodyR = document.getElementById("tableBody");
 
       // we had stored the attributes to be filled in the rows using the data-attributes of the thead
@@ -51,81 +69,59 @@ function getIncidents() {
       r.rows
         .sort((d1, d2) => d1.id - d2.id)
         .forEach((incident, i) => {
-          ++totalIncidents;
           // Check for the incident type, whether redFlag or intervention
-
+          const tr = document.createElement('tr');
+          const mediaUrl = r.rows[i].image || r.rows[i].video
+          const date = r.rows[i].created_date,
+          toString = date.slice(0,10);
           if (r.rows[i].type === "redFlag") {
             ++totalredFlags;
-            // we create a new row on the body of the table
-            let newRow = tableR.insertRow(tableR.rows.length);
+                tableR.appendChild(tr);
+                tr.innerHTML = `
+            <tr>
+              <td>${r.rows[i].id}</td>
+              <td>${r.rows[i].subject}</td>
+              <td>${r.rows[i].comment}</td>
+              <td>${mediaUrl}</td>
+              <td>${r.rows[i].location}</td>
+              <td>${r.rows[i].status}</td>
+              <td>${toString}</td>
+              <th scope="row"><button class="btn btn-sm m-0"><a href="${basePath}edit-view.html?incidentId=${incident.id}">update</a></button></th>
 
-            // we want to create as many cells as there are on the header
-            // We are leaving out the last row? For our button later :)
-            for (var j = 0; j < tableR.rows[0].cells.length - 1; j++) {
-              let newCell = newRow.insertCell(j);
-              // text to be inserted in the cell?
-              // the order is an object in the format {id: c98ae954-e0d6-48bd-9a3c-63a96989af09, createdBy: '4a6a27dc-5a72-478f-bf86-9f4199498e3f', type: 'Aba', ...}
-              // for the first cell in the header
-              let newText = document.createTextNode(
-                incident[tableR.rows[0].cells[j].dataset.name]
-              );
-              newCell.appendChild(newText);
-              window.location.insertRow;
-            }
-            let btn = document.createElement("button");
-            let tag = document.createElement("a");
-            btn.innerText = "Update";
-            tag.appendChild(btn);
-            n = tableR.rows[0].cells.length - 1;
-            let newCell = newRow.insertCell(n);
-            newCell.appendChild(tag);
-
-            btn.onclick = e => {
-              // e.preventDefault();
-              tag.href = `${basePath}edit-view.html?incidentId=${incident.id}`;
-            };
-          } else if (r.rows[i].type === "intervention") {
-            ++totalInterventions;
-            // we create a new row on the body of the table
-            let newRow = tableI.insertRow(tableI.rows.length);
-
-            // we want to create as many cells as there are on the header
-            // We are leaving out the last row? For our button later :)
-            for (var k = 0; k < tableI.rows[0].cells.length - 1; k++) {
-              let newCell = newRow.insertCell(k);
-              // text to be inserted in the cell?
-              // the order is an object in the format {id: c98ae954-e0d6-48bd-9a3c-63a96989af09, createdBy: '4a6a27dc-5a72-478f-bf86-9f4199498e3f', type: 'Aba', ...}
-              // for the first cell in the header
-              let newText = document.createTextNode(
-                incident[tableI.rows[0].cells[k].dataset.name]
-              );
-              newCell.appendChild(newText);
-              window.location.insertRow;
-            }
-            let btn = document.createElement("button");
-            let tag = document.createElement("a");
-            btn.innerText = "Update";
-            tag.appendChild(btn);
-            n = tableR.rows[0].cells.length - 1;
-            let newCell = newRow.insertCell(n);
-            newCell.appendChild(tag);
-
-            btn.onclick = e => {
-              // e.preventDefault();
-              tag.href = `${basePath}edit-view.html?incidentId=${incident.id}`;
-            };
-          }
-          document.getElementById("incidentsT").innerHTML = totalIncidents;
-          document.getElementById("redFlagT").innerHTML = totalredFlags;
+        </tr>
+      `;
+        }
+                if (r.rows[i].type === "intervention") {
+                  ++totalInterventions;
+                  tableI.appendChild(tr);
+                    tr.innerHTML = `
+                    <tr>
+                    <td>${r.rows[i].id}</td>
+                    <td>${r.rows[i].subject}</td>
+                    <td>${r.rows[i].comment}</td>
+                    <td>${mediaUrl}</td>
+                    <td>${r.rows[i].location}</td>
+                    <td>${r.rows[i].status}</td>
+                    <td>${toString}</td>
+                    <th scope="row"><button class="btn btn-sm m-0"><a href="${basePath}edit-view.html?incidentId=${incident.id}">update</a></button></th>
+                    
+              </tr>
+          `;
+                }
+          document.getElementById("incidentsT").innerHTML = r.totalCount;
+          document.getElementById("redFlagsT").innerHTML = totalredFlags;
           document.getElementById("interT").innerHTML = totalInterventions;
         });
-    });
-  try{ error => {
-    console.log("error message:", error)
-  };
-}
-catch(err){
-  console.error(err)
-}
+        
+    })
+
+.catch (err => {
+  if(err && success === false){
+    window.location.href = `${basePath}index.html`
+  //console.error('error message', err)
+  }
+})
+
 }
 getIncidents();
+

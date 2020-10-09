@@ -1,119 +1,49 @@
-/* body{ 
-    font-family: oxygen, Georgia, sans-serif;
-    font-size: 15px;
-    height: 100%;
-    line-height: 1.5;
-    padding: 0;
-    margin: auto;
-    background: #f2f2f2;   
-}
-.container{
-    width: 90%;
-    margin: auto;
-} */
-
-/* Navbar styling */
-/* .navbar{
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    width: 100%;  
-}
-.navbar #ilogo{
-    float: left;
-    height: 85px;
-    margin-right: 10px;
-    max-width: 80px;
-    margin-bottom: -25px;
-}
-.navbar #ilogo h2{
-    color: #fdfdf4;
-    margin-top: 10px;
-    position: fixed;
-    font-size: 27px;
-    font-weight: 600;
-}
-.navbar #ilogo h2::first-letter{
-    color:red;
-} */
-/* .navbar a {
-    color:#fdfdf4;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    font: oxygen, Georgia, sans-serif
-    } */
-
- /* .inavbar li{
-    display: inline;
-    padding: 20px; 
- }
-
- .inavbar li:hover {
-    text-decoration: underline;
-    color: #2522ce8a;
-    cursor: pointer;
-} */
-  
-
-/* .navbar .inavbar{
-    font-family: Century Gothic;
-    margin: .5em 0 0 2.5em;
-    padding: .9em .5em;
-}
-
-.navbar-nav {
-    padding-left: 10% !important;
-    margin: 10px !important;
-} */
-    /* form */
-
-#form-page{
+#form-page {
     background-image: linear-gradient(rgba(33, 3, 235, 0.63), rgba(146, 179, 240, 0.418));
-    min-height: 100vh;
+    /* min-height: 100vh; */
     /* background-size: cover;
     background-position: center;
     background-repeat: no-repeat; */
 }
 
 
-.siform{
+.siform {
     width: 35%;
     padding: 10% 0 0;
     margin: 0 36%;
     
 }
 
-.siform-1{
+.coform {
+    padding: 10% 0 0;
+    margin: 0 5%;
+    
+}
+
+.siform-1 {
    position: relative;
    z-index: 1;
    background-color: rgba(255, 255, 255, 0.623);
-   margin:  0 auto;
-   padding: 10px 45px;
+   padding: 10px 0px 10px 25px;
    text-align: center;
-   margin-bottom: 20px;
+   margin-bottom: 140px;
 
 }
 
- .siform-1 input{
-    font-family: oxygen, Georgia, sans-serif;
-    background: #f2f2f2;
-    width: 100%;
-    border: 0;
-    margin: 0 0 15px;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 14px;
-    overflow: overlay;
-    cursor: pointer;
-}
+.coform-1 {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.623);
+    padding: 10px 0px 10px 25px;
+    margin-bottom: 20px;
+ 
+ }
 
 .siform-1 button {
     font-family: oxygen, Georgia, sans-serif;
     text-transform: uppercase;
     outline: 0;
+    margin-left: 6%;
     background: #0905f5;
     color: #f8f7e9;
     width: 80%;
@@ -123,24 +53,32 @@
     cursor: pointer;
 }
 
-.siform-1 h2{
+.coform-1 button {
     font-family: oxygen, Georgia, sans-serif;
     text-transform: uppercase;
+    outline: 0;
+    margin-left: 15%;
+    background: #0905f5;
+    color: #f8f7e9;
+    border: 0;
+    padding:10px;
     font-size: 14px;
+    cursor: pointer;
 }
 
-.siform-1 p{
+.siform-1 p {
     margin: 15px 0 0;
     font-family: oxygen, Georgia, sans-serif;
     font-size: 12px;
 }
 
-.siform-1 h3{
+.siform-1 h3 {
     margin: 15px 0 0;
     font-family: oxygen, Georgia, sans-serif;
-    color: #f8f7e9;
+    color: #474745;
     display: block;
     font-size: 1.17em;
+    padding-right: 8%;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
@@ -148,8 +86,8 @@
     font-weight: bold;
 }
 
-.siform-1 p a{
-    color:#054c9c;
+.siform-1 p a {
+    color:#05219c;
     text-decoration: none;
     cursor: pointer;
     font-size: 15px;
@@ -159,10 +97,6 @@
     background: #2905f58c;
     color: #f8f7e9;
 }
-
-/* #sign-up{
-    display: none;
-} */
 
 #change:hover {
     text-decoration: underline;
@@ -186,7 +120,10 @@
       {
         padding: 10px 25px;
       }
-      /* #form-page{
-        height: fit-content;
-    } */
+    
 } 
+
+textarea.form-control {
+    height: 120px !important;
+}
+

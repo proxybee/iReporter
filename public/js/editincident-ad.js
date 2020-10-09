@@ -28,10 +28,13 @@ fetch(`https://ireporterafrica.herokuapp.com/api/v1/admin/incidents/${id}`, {
 }).then((res) => {
     return res.json();
   }).then((data) => {
-    if (data.status == '500' && data.error.name == "TokenExpiredError") {
+    if (data.error && data.error.expiredAt < Date.now()) {
       localStorage.clear()
       window.location.href = `${basePath}sign-in.html`;
-    }
+    };
+    if (data.error && data.success === false) {
+      window.location.href = `${basePath}index.html`;
+    };
     document.getElementById('edmedia').innerHTML = data.image || data.video;
     document.getElementById('creatby').innerHTML = data.createdby;
     document.getElementById('datecreated').innerHTML = data.created_date;
@@ -59,7 +62,7 @@ if (back) {
 
  updateStatus = (e) => {
   e.preventDefault()
-   fetch(`https://ireporterafrica.herokuapp.com/api/v1/incidents/status/${id}`, {
+   fetch(`http://localhost:4020/api/v1/incidents/status/${id}`, {
    method: "PATCH",
    mode: 'cors',
    body: JSON.stringify(statData),
@@ -92,7 +95,7 @@ if (reject) {
 const statData1 = {status: investigate.value}
 updateStatus1 = (e) => {
   e.preventDefault()
-   fetch(`https://ireporterafrica.herokuapp.com/api/v1/incidents/status/${id}`, {
+   fetch(`http://localhost:4020/api/v1/incidents/status/${id}`, {
    method: "PATCH",
    mode: 'cors',
    body: JSON.stringify(statData1),
@@ -124,7 +127,7 @@ if (investigate) {
 const statData2 = {status:resolve.value}
 updateStatus2 = (e) => {
   e.preventDefault()
-   fetch(`https://ireporterafrica.herokuapp.com/api/v1/incidents/status/${id}`, {
+   fetch(`http://localhost:4020/api/v1/incidents/status/${id}`, {
    method: "PATCH",
    mode: 'cors',
    body: JSON.stringify(statData2),
@@ -157,7 +160,7 @@ const remove = document.getElementById('delBtn');
 deleteIncident = () => {
    //e.preventDefault()
 
-return fetch(`https://ireporterafrica.herokuapp.com/api/v1/incidents/${id}`, {
+return fetch(`http://localhost:4020/api/v1/incidents/${id}`, {
     method: 'DELETE',
     headers: {
         'Content-Type': 'Application/JSON',

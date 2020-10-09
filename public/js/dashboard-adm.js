@@ -2,7 +2,7 @@ const basePath = "../";
 
 const userToken = window.localStorage.getItem("userToken");
 
-if (!userToken) {
+if (!userToken && userToken !== '') {
   window.location.href = `${basePath}sign-in.html`;
   body.style.display = "none";
   alert("You must be signed in to view Dashboard, click Ok");
@@ -10,7 +10,8 @@ if (!userToken) {
 
 function getIncidents() {
   // e.preventDefault()
-  fetch("https://ireporterafrica.herokuapp.com/api/v1/admin/incidents", {
+  //http://localhost:4020
+  fetch(`https://ireporterafrica.herokuapp.com/api/v1/admin/incidents`, {
     method: "GET",
     mode: "cors",
     headers: {
@@ -23,10 +24,13 @@ function getIncidents() {
     })
     .then(r => {
       console.log('hhhhhhhh', r)
-      if (r.status == '500' && r.error.name == "TokenExpiredError") {
+      if (data.error && data.error.expiredAt < Date.now()) {
         localStorage.clear()
         window.location.href = `${basePath}sign-in.html`;
-      }
+      };
+      if (data.error && data.success === false) {
+        window.location.href = `${basePath}index.html`;
+      };
       if (r.status == 204 || r.status == 400) {
         document.getElementById(
           "errormsg"
