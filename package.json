@@ -2,7 +2,7 @@
   "name": "ireporter",
   "version": "1.0.0",
   "description": "An eye witness app to fight corruption in Africa",
-  "main": "app",
+  "main": "index.html",
   "engines": {
     "node": "12.14.0",
     "npm": "6.13.4"
