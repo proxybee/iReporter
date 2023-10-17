@@ -3,7 +3,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/fcf4220d15a85451b773/maintainability)](https://codeclimate.com/github/proxybee/iReporter/maintainability)
 
 # iReporter
-iReporter is a platform anonymous reporting platform where experienced/witnessed corrupt, theft, bullying, unethical and unjust practices in any cooperate organization or government body can be reported, to bring the attention of an organization's management and the general public to situations, incidents or existing hazardous condition that may require urgent intervention.
+iReporter an anonymous reporting platform where experienced/witnessed corrupt, theft, bullying, unethical and unjust practices in any cooperate organization or government body can be reported, to bring the attention of an organization's management and the general public to situations, incidents or existing hazardous condition that may require urgent intervention.
 Ensure to submit a report whenever you witness any, your report will be investigated and Intermediated, concerned management team and governing body will be notified as appropriate.
 
 This is to solve the problem of oversight by organizations and governing bodies.
